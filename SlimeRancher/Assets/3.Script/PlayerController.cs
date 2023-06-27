@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] CharacterController characterController;
+    [SerializeField] Animator animator;
 
     [SerializeField] float speed = 10;
     [SerializeField] float gravity = -9.81f;
@@ -15,13 +16,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask groundMask;
 
     Vector3 velocity;
-    bool isGround;
-    bool isSpeedUp = false;
+    bool isGround = true;
+    bool isJump = false;
+    bool isShift = false;
+    bool isForward = false;
+    bool isBackward = false;
 
     void Update()
     {
         isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        Debug.Log(isGround);
 
         if(isGround && velocity.y < 0)
         {
@@ -35,25 +38,70 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(move * speed * Time.deltaTime);
 
+        if (z > 0 && !isForward)
+        {
+            isForward = true;
+            isBackward = false;
+            animator.SetTrigger("forward");
+            animator.SetBool("isForward", isForward);
+        }
+        else if (z < 0 && !isBackward)
+        {
+            isForward = false;
+            isBackward = true;
+            animator.SetTrigger("backward");
+            animator.SetBool("isBackward", isBackward);
+        }
+        else if(z == 0)
+        {
+            isForward = false;
+            isBackward = false;
+            animator.SetBool("isForward", isForward);
+            animator.SetBool("isBackward", isBackward);
+        }
+
         if (Input.GetButtonDown("Jump") && isGround)
         {
-            Debug.Log("มกวม");
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);    
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            if (!isJump)
+            {
+                isJump = true;
+                animator.SetBool("isGround", false);
+            }
+        }
+        else if(isJump && isGround)
+        {
+            isJump = false;
+            animator.SetBool("isGround", true);
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            isSpeedUp = true;
+            if (!isShift)
+            {
+                animator.SetBool("isShift", true);
+            }
+            isShift = true;
             speed = 20;
         }
-        else if (isGround)
+        else if (isShift && !Input.GetKey(KeyCode.LeftShift))
         {
-            isSpeedUp = false;
+            animator.SetBool("isShift", false);
             speed = 10;
+            isShift = false;
         }
 
         velocity.y += gravity * Time.deltaTime;
 
         characterController.Move(velocity * Time.deltaTime);
+
+
+        
+        
+
+        Debug.Log("isShift : " + isShift);
+        Debug.Log("isForward : " + isForward);
+        Debug.Log("isBackward : " + isBackward);
+        Debug.Log("isGround : " + isGround);
     }
 }
