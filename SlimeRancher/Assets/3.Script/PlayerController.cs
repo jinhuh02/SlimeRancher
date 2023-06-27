@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] CharacterController characterController;
-    [SerializeField] Animator animator;
+    //[SerializeField] Animator animator;
 
     [SerializeField] float speed = 10;
     [SerializeField] float gravity = -9.81f;
@@ -38,27 +38,27 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(move * speed * Time.deltaTime);
 
-        if (z > 0 && !isForward)
-        {
-            isForward = true;
-            isBackward = false;
-            animator.SetTrigger("forward");
-            animator.SetBool("isForward", isForward);
-        }
-        else if (z < 0 && !isBackward)
-        {
-            isForward = false;
-            isBackward = true;
-            animator.SetTrigger("backward");
-            animator.SetBool("isBackward", isBackward);
-        }
-        else if(z == 0)
-        {
-            isForward = false;
-            isBackward = false;
-            animator.SetBool("isForward", isForward);
-            animator.SetBool("isBackward", isBackward);
-        }
+        //if (z > 0 && !isForward)
+        //{
+        //    isForward = true;
+        //    isBackward = false;
+        //    animator.SetTrigger("forward");
+        //    animator.SetBool("isForward", isForward);
+        //}
+        //else if (z < 0 && !isBackward)
+        //{
+        //    isForward = false;
+        //    isBackward = true;
+        //    animator.SetTrigger("backward");
+        //    animator.SetBool("isBackward", isBackward);
+        //}
+        //else if(z == 0)
+        //{
+        //    isForward = false;
+        //    isBackward = false;
+        //    animator.SetBool("isForward", isForward);
+        //    animator.SetBool("isBackward", isBackward);
+        //}
 
         if (Input.GetButtonDown("Jump") && isGround)
         {
@@ -66,27 +66,27 @@ public class PlayerController : MonoBehaviour
             if (!isJump)
             {
                 isJump = true;
-                animator.SetBool("isGround", false);
+                //animator.SetBool("isGround", false);
             }
         }
         else if(isJump && isGround)
         {
             isJump = false;
-            animator.SetBool("isGround", true);
+            //animator.SetBool("isGround", true);
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            if (!isShift)
-            {
-                animator.SetBool("isShift", true);
-            }
+            //if (!isShift)
+            //{
+            //    animator.SetBool("isShift", true);
+            //}
             isShift = true;
             speed = 20;
         }
         else if (isShift && !Input.GetKey(KeyCode.LeftShift))
         {
-            animator.SetBool("isShift", false);
+            //animator.SetBool("isShift", false);
             speed = 10;
             isShift = false;
         }
@@ -95,13 +95,5 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(velocity * Time.deltaTime);
 
-
-        
-        
-
-        Debug.Log("isShift : " + isShift);
-        Debug.Log("isForward : " + isForward);
-        Debug.Log("isBackward : " + isBackward);
-        Debug.Log("isGround : " + isGround);
     }
 }
