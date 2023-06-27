@@ -4,63 +4,56 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rigidbody;
+    [SerializeField] CharacterController characterController;
 
-    float speed = 10;
+    [SerializeField] float speed = 10;
+    [SerializeField] float gravity = -9.81f;
+    float jumpHeight = 3f;
 
-    Vector3 mousePos;
-    Vector3 worldPos;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundDistance = 0.4f;
+    [SerializeField] LayerMask groundMask;
 
-    private void Start()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-    }
+    Vector3 velocity;
+    bool isGround;
+    bool isSpeedUp = false;
 
     void Update()
     {
+        isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        Debug.Log(isGround);
+
+        if(isGround && velocity.y < 0)
+        {
+            velocity.y = 0f;
+        }
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        characterController.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isGround)
+        {
+            Debug.Log("มกวม");
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);    
+        }
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            isSpeedUp = true;
             speed = 20;
         }
-        else if(speed != 10)
+        else if (isGround)
         {
+            isSpeedUp = false;
             speed = 10;
         }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            rigidbody.velocity = Vector3.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rigidbody.velocity = Vector3.back * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rigidbody.velocity = Vector3.left * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rigidbody.velocity = Vector3.right * speed * Time.deltaTime;
-        }
+        velocity.y += gravity * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            rigidbody.AddForce(Vector3.up * 40, ForceMode.Force);
-        }
-
-
-        mousePos = Input.mousePosition;
-        worldPos = Camera.main.ScreenToViewportPoint(mousePos);
-        Debug.Log(worldPos);
-
-        if (worldPos.x < 0.3f)
-        {
-            transform.Rotate(0, -1, 0, Space.Self);
-        }
-        if (worldPos.x > 0.7f)
-        {
-            transform.Rotate(0, 1, 0, Space.Self);
-        }
+        characterController.Move(velocity * Time.deltaTime);
     }
 }
