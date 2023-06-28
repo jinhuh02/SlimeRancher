@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CharacterController characterController;
     //[SerializeField] Animator animator;
 
-    [SerializeField] float speed = 10;
-    [SerializeField] float gravity = -9.81f;
+    float speed = 20;
+    float gravity = -9.81f;
     float jumpHeight = 3f;
 
     [SerializeField] Transform groundCheck;
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGround)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -3f * gravity);
             if (!isJump)
             {
                 isJump = true;
@@ -75,20 +75,21 @@ public class PlayerController : MonoBehaviour
             //animator.SetBool("isGround", true);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        
+        if (isShift && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //animator.SetBool("isShift", false);
+            speed = 20;
+            isShift = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             //if (!isShift)
             //{
             //    animator.SetBool("isShift", true);
             //}
             isShift = true;
-            speed = 30;
-        }
-        else if (isShift && !Input.GetKey(KeyCode.LeftShift))
-        {
-            //animator.SetBool("isShift", false);
-            speed = 10;
-            isShift = false;
+            speed = 40;
         }
 
         velocity.y += gravity * Time.deltaTime;
