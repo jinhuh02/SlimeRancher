@@ -24,24 +24,38 @@ public class Silme : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(7);
-            switch(Random.Range(0, 5))
+            switch(Random.Range(0, 10))
             {
                 case 0:
                     slime_rigidbody.AddForce(new Vector3(1, 1, 0) * power, ForceMode.Force);
                     break;
-
                 case 1:
                     slime_rigidbody.AddForce(new Vector3(0, 1, 1) * power, ForceMode.Force);
                     break;
                 case 2:
                     slime_rigidbody.AddForce(new Vector3(0.5f, 1, 0.5f) * power, ForceMode.Force);
                     break;
-
                 case 3:
                     slime_rigidbody.AddForce(new Vector3(0.3f, 1, 0.7f) * power, ForceMode.Force);
                     break;
                 case 4:
                     slime_rigidbody.AddForce(new Vector3(0.7f, 1, 0.3f) * power, ForceMode.Force);
+                    break;
+
+                case 5:
+                    slime_rigidbody.AddForce(new Vector3(-1, 1, 0) * power, ForceMode.Force);
+                    break;
+                case 6:
+                    slime_rigidbody.AddForce(new Vector3(0, 1, -1) * power, ForceMode.Force);
+                    break;
+                case 7:
+                    slime_rigidbody.AddForce(new Vector3(-0.5f, 1, -0.5f) * power, ForceMode.Force);
+                    break;
+                case 8:
+                    slime_rigidbody.AddForce(new Vector3(-0.3f, 1, -0.7f) * power, ForceMode.Force);
+                    break;
+                case 9:
+                    slime_rigidbody.AddForce(new Vector3(-0.7f, 1, -0.3f) * power, ForceMode.Force);
                     break;
             }
         }
