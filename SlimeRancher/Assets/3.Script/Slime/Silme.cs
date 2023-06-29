@@ -23,7 +23,7 @@ public class Silme : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(6);
             switch(Random.Range(0, 10))
             {
                 case 0:

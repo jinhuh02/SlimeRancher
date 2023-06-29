@@ -7,6 +7,9 @@ public class Vacpack : MonoBehaviour
     [SerializeField] Animator vacpack_animator;
     [SerializeField] GameObject[] meshs = new GameObject[5];
 
+    [Header("내보내기")]
+    [SerializeField] Inventory inventory;
+    [SerializeField] int itemBagNum = 0;
 
     bool mouseLeft = false;
     bool mouseRight = false;
@@ -19,12 +22,16 @@ public class Vacpack : MonoBehaviour
             mouseLeft = true;
             vacpack_animator.SetBool("mouseLeft", true);
             vacpack_animator.SetTrigger("lift");
+
+            StartCoroutine(ExportItem_co());
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             mouseLeft = false;
             vacpack_animator.SetBool("mouseLeft", false);
+
+            StopAllCoroutines();
         }
 
         if (Input.GetMouseButtonDown(1) && !mouseLeft)
@@ -49,5 +56,14 @@ public class Vacpack : MonoBehaviour
         }
     }
 
+    IEnumerator ExportItem_co()
+    {
+        while (true)
+        {
+            inventory.ExportItem(itemBagNum);
+            yield return new WaitForSeconds(0.3f);
+        }
+        
+    }
 
 }
