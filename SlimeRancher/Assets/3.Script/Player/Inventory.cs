@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] GameObject player;
 
+    public int selectInvenNum = 0;
 
     [SerializeField] GameObject[] SelectedUI = new GameObject[4]; //스케일을 키워주기위해
     [SerializeField] GameObject[] UnselectedUI = new GameObject[4]; //x
@@ -37,33 +38,34 @@ public class Inventory : MonoBehaviour
 
     public void ShowSelectUI(int selectNum)
     {
+        selectInvenNum = selectNum;
         switch (selectNum)
         {
             case 0:
                 for(int i=1; i<4; i++)
                 {
-                    UnselectedUI[i].SetActive(true);
+                    SelectedUI[i].transform.localScale = new Vector3(1, 1, 1);
                 }
-                UnselectedUI[0].SetActive(false);
+                SelectedUI[0].transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
                 break;
             case 1:
-                UnselectedUI[0].SetActive(true);
-                UnselectedUI[1].SetActive(false);
-                UnselectedUI[2].SetActive(true);
-                UnselectedUI[3].SetActive(true);
+                SelectedUI[0].transform.localScale = new Vector3(1, 1, 1);
+                SelectedUI[1].transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                SelectedUI[2].transform.localScale = new Vector3(1, 1, 1);
+                SelectedUI[3].transform.localScale = new Vector3(1, 1, 1);
                 break;
             case 2:
-                UnselectedUI[0].SetActive(true);
-                UnselectedUI[1].SetActive(true);
-                UnselectedUI[2].SetActive(false);
-                UnselectedUI[3].SetActive(true);
+                SelectedUI[0].transform.localScale = new Vector3(1, 1, 1);
+                SelectedUI[1].transform.localScale = new Vector3(1, 1, 1);
+                SelectedUI[2].transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                SelectedUI[3].transform.localScale = new Vector3(1, 1, 1);
                 break;
             case 3:
                 for (int i = 0; i < 3; i++)
                 {
-                    UnselectedUI[i].SetActive(true);
+                    SelectedUI[i].transform.localScale = new Vector3(1, 1, 1);
                 }
-                UnselectedUI[3].SetActive(false);
+                SelectedUI[3].transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
                 break;
         }
 
@@ -71,7 +73,8 @@ public class Inventory : MonoBehaviour
 
     public void GetItem(int itemNum, GameObject itemObj)
     {
-        for(int i=0; i<4; i++)
+        
+        for (int i=0; i<4; i++)
         {
             if(bag[i] == itemNum && itemCount[i] < 20) //이미 인벤토리에 1개 이상 존재하고, 수량이 20개를 넘지 않았다면
             {
@@ -90,7 +93,26 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        for(int i=0; i<4; i++)
+
+        //첫수납인데 현재 선택되어있는 칸에 아이템을 넣을 수 있다면
+        if (bag[selectInvenNum] == 0) //첫 수납
+        {
+            bag[selectInvenNum] = itemNum;
+            objBox[selectInvenNum, 0] = itemObj;
+            objBox[selectInvenNum, 0].SetActive(false);
+            itemCount[selectInvenNum]++;
+            Debug.Log(itemNum + " 를 " + selectInvenNum + "번 가방에 수납 | 현재 " + itemCount[selectInvenNum] + "개");
+
+            UnselectedUI[selectInvenNum].SetActive(false);
+            icon_UI[selectInvenNum].gameObject.SetActive(true);
+            icon_UI[selectInvenNum].sprite = itemObj.GetComponent<Item>().itemIcon;
+            name_UI[selectInvenNum].text = itemObj.GetComponent<Item>().itemName;
+            count_UI[selectInvenNum].text = "x " + itemCount[selectInvenNum];
+
+            return;
+        }
+
+        for (int i=0; i<4; i++)
         {
             if(bag[i] == 0) //첫 수납
             {
@@ -101,6 +123,7 @@ public class Inventory : MonoBehaviour
                 Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
 
                 UnselectedUI[i].SetActive(false);
+                icon_UI[i].gameObject.SetActive(true);
                 icon_UI[i].sprite = itemObj.GetComponent<Item>().itemIcon;
                 name_UI[i].text = itemObj.GetComponent<Item>().itemName;
                 count_UI[i].text = "x " + itemCount[i];
@@ -138,6 +161,7 @@ public class Inventory : MonoBehaviour
             icon_UI[bagNum].gameObject.SetActive(false);
             name_UI[bagNum].text = string.Empty;
             count_UI[bagNum].text = string.Empty;
+            bag[bagNum] = 0;
             return;
         }
 
@@ -152,6 +176,19 @@ public class Inventory : MonoBehaviour
         objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().velocity = Vector3.zero;
         objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().AddForce(transform.rotation * Vector3.forward * 1500, ForceMode.Force);
         itemCount[bagNum]--;
+        
 
+        if(itemCount[bagNum] == 0)
+        {
+            UnselectedUI[bagNum].SetActive(true);
+            icon_UI[bagNum].gameObject.SetActive(false);
+            name_UI[bagNum].text = string.Empty;
+            count_UI[bagNum].text = string.Empty;
+            bag[bagNum] = 0;
+        }
+        else
+        {
+            count_UI[bagNum].text = "x " + itemCount[bagNum];
+        }
     }
 }
