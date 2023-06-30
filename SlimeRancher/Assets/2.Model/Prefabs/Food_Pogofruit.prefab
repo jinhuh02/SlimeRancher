@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 707926419468514312}
   - component: {fileID: 9197321619307310271}
   - component: {fileID: 4444770586483520575}
+  - component: {fileID: -3745726577158788245}
   - component: {fileID: 4444770586483520560}
   - component: {fileID: 4444770586483520561}
   m_Layer: 0
@@ -97,8 +98,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemNum: 4
-  itemIcon: {fileID: 2800000, guid: 53f4eaa723e910042b86b69a0a7cc4c4, type: 3}
+  itemIcon: {fileID: 21300000, guid: 53f4eaa723e910042b86b69a0a7cc4c4, type: 3}
+  itemName: "\uD3EC\uACE0 \uC5F4\uB9E4"
   isVacpackSelect: 0
+--- !u!114 &-3745726577158788245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444770586483520562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e7bb4d5720c204ea8fa6b475d5305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlreadyChosen: 0
 --- !u!54 &4444770586483520560
 Rigidbody:
   m_ObjectHideFlags: 0

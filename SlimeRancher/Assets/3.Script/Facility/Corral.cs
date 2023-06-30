@@ -10,7 +10,7 @@ public class Corral : MonoBehaviour
     {
         for(int i=0; i<4; i++)
         {
-            barrier[i].SetActive(false);
+            barrier[i].SetActive(true);
         }
     }
 

@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
-    public bool isPassLock = false; //완전 차단
-    public bool isPassSilme = false; //슬라임 들어오는건 되지만 나가는건 안됨
-
-    MeshCollider myCollider;
+    BoxCollider myCollider;
 
     private void Start()
     {
-        myCollider = GetComponent<MeshCollider>();
+        myCollider = GetComponent<BoxCollider>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
+        if (other.CompareTag("Slime"))
+        {
+            Debug.Log("나가지마");
+            other.GetComponent<Rigidbody>().velocity = -other.GetComponent<Rigidbody>().velocity * 0.5f;
 
-
-
-
-
+        }
     }
 
 

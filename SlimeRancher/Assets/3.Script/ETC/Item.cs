@@ -6,7 +6,8 @@ public class Item : MonoBehaviour
 {
     public int itemNum = 0;
 
-    public Texture2D itemIcon;
+    public Sprite itemIcon;
+    public string itemName = string.Empty;
 
     public bool isVacpackSelect = false;
 

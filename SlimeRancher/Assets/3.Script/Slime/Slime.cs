@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Silme : MonoBehaviour
+public class Slime : MonoBehaviour
 {
     [SerializeField] Animator slime_animator;
     [SerializeField] GameObject myPlort;
@@ -21,6 +21,11 @@ public class Silme : MonoBehaviour
         slime_rigidbody = GetComponent<Rigidbody>();
 
         slime_rigidbody.AddForce(Vector3.up * 700, ForceMode.Force);
+        StartCoroutine(Slime_co());
+    }
+
+    public void StartSliemCoroutine()
+    {
         StartCoroutine(Slime_co());
     }
 
@@ -102,8 +107,14 @@ public class Silme : MonoBehaviour
 
         if (collision.transform.CompareTag("Food") && !isFoodTarget && step==0)
         {
+            if (collision.transform.GetComponent<Food>().isAlreadyChosen)
+            {
+                Debug.Log("다른 슬라임이 먼저 발견함");
+                return;
+            }
             //먹이에 다가간 후 먹는 애니메이션 진행
             Debug.Log("먹이다!");
+            collision.transform.GetComponent<Food>().isAlreadyChosen = true;
             isFoodTarget = true;
             targetFood_obj = collision.gameObject;
             step = 1;

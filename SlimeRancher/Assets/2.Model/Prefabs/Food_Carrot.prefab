@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8496308511616579977}
   - component: {fileID: 2573029961962534088}
   - component: {fileID: 8039220092909583226}
+  - component: {fileID: 6914417968703243160}
   - component: {fileID: 8039220092909583227}
   - component: {fileID: 8039220092909583224}
   m_Layer: 0
@@ -97,8 +98,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemNum: 3
-  itemIcon: {fileID: 2800000, guid: b3286914cde6b1d4180532e9a1b918c8, type: 3}
+  itemIcon: {fileID: 21300000, guid: b3286914cde6b1d4180532e9a1b918c8, type: 3}
+  itemName: "\uB2F9\uADFC"
   isVacpackSelect: 0
+--- !u!114 &6914417968703243160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8039220092909583225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e7bb4d5720c204ea8fa6b475d5305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlreadyChosen: 0
 --- !u!54 &8039220092909583227
 Rigidbody:
   m_ObjectHideFlags: 0

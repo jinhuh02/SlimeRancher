@@ -32,12 +32,13 @@ public class PlayerController : MonoBehaviour
         }
 
         float x = Input.GetAxis("Horizontal");
+        Debug.Log(x);
         float z = Input.GetAxis("Vertical");
+        Debug.Log(z);
 
         Vector3 move = transform.right * x + transform.forward * z;
 
         characterController.Move(move * speed * Time.deltaTime);
-
 
         if (Input.GetButtonDown("Jump") && isGround)
         {
