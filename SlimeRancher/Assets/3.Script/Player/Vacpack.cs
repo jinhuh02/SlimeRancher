@@ -9,11 +9,11 @@ public class Vacpack : MonoBehaviour
 
     [Header("내보내기")]
     [SerializeField] Inventory inventory;
-    [SerializeField] int itemBagNum = 0;
 
     bool mouseLeft = false;
     bool mouseRight = false;
 
+    int selectInvenNum = 0;
 
     private void Update()
     {
@@ -54,16 +54,43 @@ public class Vacpack : MonoBehaviour
                 meshs[i].SetActive(false);
             }
         }
+
+
+        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+        {
+            if (selectInvenNum == 0)
+            {
+                selectInvenNum = 3;
+            }
+            else
+            {
+                selectInvenNum--;
+            }
+            Debug.Log("선택된 인벤토리 : " + selectInvenNum);
+        }
+        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+        {
+            if (selectInvenNum == 3)
+            {
+                selectInvenNum = 0;
+            }
+            else
+            {
+                selectInvenNum++;
+            }
+            Debug.Log("선택된 인벤토리 : " + selectInvenNum);
+        }
     }
 
     IEnumerator ExportItem_co()
     {
         while (true)
         {
-            inventory.ExportItem(itemBagNum);
+            inventory.ExportItem(selectInvenNum);
             yield return new WaitForSeconds(0.3f);
         }
-        
+
     }
+
 
 }

@@ -551,7 +551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212b5dae4bf3ec0449b8c09f28748ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slime_animator: {fileID: 0}
+  slime_animator: {fileID: 6568808471220555087}
+  myPlort: {fileID: 5196883303282724272, guid: 87a9cf7f40b23014aab491aec354524a, type: 3}
 --- !u!114 &5292750692345339274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNum: 2
   itemIcon: {fileID: 2800000, guid: 2e4d51a0689a96a40beadc376daeaeba, type: 3}
+  isVacpackSelect: 0
 --- !u!136 &224847119595601192
 CapsuleCollider:
   m_ObjectHideFlags: 0

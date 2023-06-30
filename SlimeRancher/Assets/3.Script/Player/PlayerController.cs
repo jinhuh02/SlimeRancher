@@ -38,27 +38,6 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(move * speed * Time.deltaTime);
 
-        //if (z > 0 && !isForward)
-        //{
-        //    isForward = true;
-        //    isBackward = false;
-        //    animator.SetTrigger("forward");
-        //    animator.SetBool("isForward", isForward);
-        //}
-        //else if (z < 0 && !isBackward)
-        //{
-        //    isForward = false;
-        //    isBackward = true;
-        //    animator.SetTrigger("backward");
-        //    animator.SetBool("isBackward", isBackward);
-        //}
-        //else if(z == 0)
-        //{
-        //    isForward = false;
-        //    isBackward = false;
-        //    animator.SetBool("isForward", isForward);
-        //    animator.SetBool("isBackward", isBackward);
-        //}
 
         if (Input.GetButtonDown("Jump") && isGround)
         {
@@ -66,28 +45,21 @@ public class PlayerController : MonoBehaviour
             if (!isJump)
             {
                 isJump = true;
-                //animator.SetBool("isGround", false);
             }
         }
         else if(isJump && isGround)
         {
             isJump = false;
-            //animator.SetBool("isGround", true);
         }
 
         
         if (isShift && Input.GetKeyDown(KeyCode.LeftShift))
         {
-            //animator.SetBool("isShift", false);
             speed = 20;
             isShift = false;
         }
         else if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            //if (!isShift)
-            //{
-            //    animator.SetBool("isShift", true);
-            //}
             isShift = true;
             speed = 40;
         }

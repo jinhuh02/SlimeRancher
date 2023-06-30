@@ -5,22 +5,27 @@ using UnityEngine;
 public class Silme : MonoBehaviour
 {
     [SerializeField] Animator slime_animator;
+    [SerializeField] GameObject myPlort;
+
     Rigidbody slime_rigidbody;
 
     float power = 400;
 
+    bool isFoodTarget = false;
+    GameObject targetFood_obj;
+    int step = 0;
+
     private void Start()
     {
-        slime_animator = transform.GetChild(0).GetComponent<Animator>();
+        slime_animator = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
         slime_rigidbody = GetComponent<Rigidbody>();
 
+        slime_rigidbody.AddForce(Vector3.up * 700, ForceMode.Force);
         StartCoroutine(Slime_co());
     }
 
     IEnumerator Slime_co()
     {
-        slime_rigidbody.AddForce(Vector3.up * 700, ForceMode.Force);
-
         while (true)
         {
             yield return new WaitForSeconds(6);
@@ -62,5 +67,72 @@ public class Silme : MonoBehaviour
         
 
 
+    }
+
+    IEnumerator FindFood_co()
+    {
+        while (true)
+        {
+            if (isFoodTarget && targetFood_obj != null)
+            {
+                Vector3 dir = targetFood_obj.transform.position - transform.position;
+                dir.Normalize();
+
+                transform.rotation = Quaternion.Euler(0, dir.y, 0);
+                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, 0);
+
+                slime_rigidbody.velocity = new Vector3(dir.x, 0, dir.z) * 500 * Time.deltaTime;
+
+                if (targetFood_obj.transform.position.y > transform.position.y+7)
+                {
+                    slime_rigidbody.velocity += new Vector3(0, 200, 0) * Time.deltaTime;
+                }
+                else
+                {
+                    slime_rigidbody.velocity += Vector3.down * 200 * Time.deltaTime;
+                }
+            }
+
+            yield return null;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.transform.CompareTag("Food") && !isFoodTarget && step==0)
+        {
+            //먹이에 다가간 후 먹는 애니메이션 진행
+            Debug.Log("먹이다!");
+            isFoodTarget = true;
+            targetFood_obj = collision.gameObject;
+            step = 1;
+            StopAllCoroutines();
+            StartCoroutine(FindFood_co());
+            return;
+        }
+
+        else if(collision.transform.CompareTag("Food") && isFoodTarget && step==1)
+        {
+            isFoodTarget = false;
+            Debug.Log("먹어볼게");
+            step = 2;
+            StartCoroutine(Bite_co(collision.gameObject));
+            return;
+        }
+    }
+
+    IEnumerator Bite_co(GameObject food)
+    {
+        Debug.Log("먹었다");
+        slime_animator.SetTrigger("bite");
+        yield return new WaitForSeconds(2.5f);
+        Destroy(food);
+        yield return new WaitForSeconds(2f);
+        //보석(Plort)를 내뱉는다
+        GameObject plort = Instantiate(myPlort);
+        plort.transform.position = transform.position;
+        step = 0;
+        StartCoroutine(Slime_co());
     }
 }

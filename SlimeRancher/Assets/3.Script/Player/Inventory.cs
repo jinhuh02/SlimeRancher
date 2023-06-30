@@ -28,9 +28,9 @@ public class Inventory : MonoBehaviour
             if(bag[i] == itemNum && itemCount[i] < 20) //이미 인벤토리에 1개 이상 존재하고, 수량이 20개를 넘지 않았다면
             {
                 objBox[i, itemCount[i]] = itemObj;
-                Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
                 objBox[i, itemCount[i]].SetActive(false);
                 itemCount[i]++;
+                Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
                 return;
             }
             else if (bag[i] == itemNum) //아이템 개수 넘음
@@ -46,9 +46,9 @@ public class Inventory : MonoBehaviour
             {
                 bag[i] = itemNum;
                 objBox[i, 0] = itemObj;
-                Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
                 objBox[i, 0].SetActive(false);
                 itemCount[i]++;
+                Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
                 return;
             }
         }
@@ -65,7 +65,7 @@ public class Inventory : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.transform.CompareTag("Slime") && other.transform.GetComponent<Item>().isVacpackSelect)
+        if ((other.transform.CompareTag("Slime") || other.transform.CompareTag("Food") || other.transform.CompareTag("Item")) && other.transform.GetComponent<Item>().isVacpackSelect)
         {
             GetItem(other.transform.GetComponent<Item>().itemNum, other.gameObject);
         }

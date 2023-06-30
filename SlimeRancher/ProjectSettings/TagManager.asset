@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Slime
+  - Item
+  - Food
   layers:
   - Default
   - TransparentFX
