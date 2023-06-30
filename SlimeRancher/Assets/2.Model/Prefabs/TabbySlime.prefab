@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 6334437471281470230}
   - component: {fileID: 6334437471281470231}
   - component: {fileID: 5292750692345339274}
+  - component: {fileID: 5581409904793045116}
   - component: {fileID: 224847119595601192}
   m_Layer: 0
   m_Name: TabbySlime
@@ -569,6 +570,20 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 2e4d51a0689a96a40beadc376daeaeba, type: 3}
   itemName: "\uB0E5\uC774 \uC2AC\uB77C\uC784"
   isVacpackSelect: 0
+--- !u!114 &5581409904793045116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334437471281470227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06d1506f3f205d4885a99e6b9c4652f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_name: "\uB0E5\uC774 \uC2AC\uB77C\uC784"
+  my_details: "\uC2DD\uC131 : \uC7A1\uC2DD\uC131"
 --- !u!136 &224847119595601192
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] Animator animator;
 
     float speed = 20;
-    float gravity = -9.81f;
+    float gravity = -20f;
     float jumpHeight = 3f;
 
     [SerializeField] Transform groundCheck;
@@ -32,9 +32,7 @@ public class PlayerController : MonoBehaviour
         }
 
         float x = Input.GetAxis("Horizontal");
-        Debug.Log(x);
         float z = Input.GetAxis("Vertical");
-        Debug.Log(z);
 
         Vector3 move = transform.right * x + transform.forward * z;
 

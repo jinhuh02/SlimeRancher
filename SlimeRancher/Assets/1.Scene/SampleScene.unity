@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9323013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 40065546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 156357355}
   - component: {fileID: 156357354}
   - component: {fileID: 156357353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: techActivator 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 204181986}
   - component: {fileID: 204181985}
   - component: {fileID: 204181984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 210842586}
   - component: {fileID: 210842588}
   - component: {fileID: 210842587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 277608206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1436,7 +1436,7 @@ GameObject:
   - component: {fileID: 396139713}
   - component: {fileID: 396139715}
   - component: {fileID: 396139714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 445285768}
   - component: {fileID: 445285767}
   - component: {fileID: 445285769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,7 +1979,7 @@ GameObject:
   - component: {fileID: 489664676}
   - component: {fileID: 489664678}
   - component: {fileID: 489664677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2037,7 +2037,7 @@ GameObject:
   - component: {fileID: 501090200}
   - component: {fileID: 501090199}
   - component: {fileID: 501090201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2208,7 +2208,7 @@ GameObject:
   - component: {fileID: 563052147}
   - component: {fileID: 563052149}
   - component: {fileID: 563052148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2660,6 +2660,52 @@ Transform:
   m_Father: {fileID: 478981132}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &624171115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624171116}
+  - component: {fileID: 624171117}
+  m_Layer: 0
+  m_Name: CheckPlayerForward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624171116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624171115}
+  m_LocalRotation: {x: 0.015364595, y: -0.007702503, z: 0.012994292, w: 0.99976784}
+  m_LocalPosition: {x: 0.185, y: 0.1, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 1.772, y: -0.86, z: 1.476}
+--- !u!114 &624171117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624171115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4539b12fc32ebf245aba8aea74a74745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interpretation_ui: {fileID: 1743007427}
+  name_text: {fileID: 797457541}
+  details_text: {fileID: 791845176}
 --- !u!1 &628609890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,7 +2793,7 @@ GameObject:
   - component: {fileID: 639552394}
   - component: {fileID: 639552393}
   - component: {fileID: 639552392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2922,7 +2968,7 @@ GameObject:
   - component: {fileID: 699470273}
   - component: {fileID: 699470272}
   - component: {fileID: 699470274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: interior_beam_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3492,7 +3538,7 @@ GameObject:
   - component: {fileID: 797457542}
   - component: {fileID: 797457541}
   m_Layer: 5
-  m_Name: date_text
+  m_Name: Name_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3634,7 +3680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 834266551}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4275,6 +4321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1023680419227717558}
+  - {fileID: 624171116}
   m_Father: {fileID: 8186001064537462252}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4336,7 +4383,7 @@ GameObject:
   - component: {fileID: 972572885}
   - component: {fileID: 972572884}
   - component: {fileID: 972572883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: techActivator 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4432,7 +4479,7 @@ GameObject:
   - component: {fileID: 976742971}
   - component: {fileID: 976742970}
   - component: {fileID: 976742969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4717,7 +4764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133973239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4751,7 +4798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1162175556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plort Market
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5008,7 +5055,7 @@ GameObject:
   - component: {fileID: 1215222944}
   - component: {fileID: 1215222943}
   - component: {fileID: 1215222942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5103,7 +5150,7 @@ GameObject:
   - component: {fileID: 1227027860}
   - component: {fileID: 1227027861}
   - component: {fileID: 1227027862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5415,7 +5462,7 @@ GameObject:
   - component: {fileID: 1388517994}
   - component: {fileID: 1388517993}
   - component: {fileID: 1388517992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5824,7 +5871,7 @@ GameObject:
   - component: {fileID: 1432232616}
   - component: {fileID: 1432232615}
   - component: {fileID: 1432232617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5995,7 +6042,7 @@ GameObject:
   - component: {fileID: 1487466273}
   - component: {fileID: 1487466272}
   - component: {fileID: 1487466274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6165,7 +6212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1513596127}
   - component: {fileID: 1513596128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6218,7 +6265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1524776849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6416,7 +6463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1544779855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6452,7 +6499,7 @@ GameObject:
   - component: {fileID: 1561691534}
   - component: {fileID: 1561691536}
   - component: {fileID: 1561691535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6858,7 +6905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1664756676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6894,7 +6941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1671877735}
   - component: {fileID: 1671877736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7029,7 +7076,7 @@ GameObject:
   - component: {fileID: 1727936081}
   - component: {fileID: 1727936080}
   - component: {fileID: 1727936082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7301,7 +7348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745294435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7622,7 +7669,7 @@ GameObject:
   - component: {fileID: 1831022489}
   - component: {fileID: 1831022491}
   - component: {fileID: 1831022490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7821,7 +7868,7 @@ GameObject:
   - component: {fileID: 1853795740}
   - component: {fileID: 1853795739}
   - component: {fileID: 1853795741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8036,7 +8083,7 @@ GameObject:
   - component: {fileID: 1904269208}
   - component: {fileID: 1904269207}
   - component: {fileID: 1904269206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8132,7 +8179,7 @@ GameObject:
   - component: {fileID: 1915482663}
   - component: {fileID: 1915482662}
   - component: {fileID: 1915482661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8323,7 +8370,7 @@ GameObject:
   - component: {fileID: 1927562919}
   - component: {fileID: 1927562921}
   - component: {fileID: 1927562920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8651,7 +8698,7 @@ GameObject:
   - component: {fileID: 1992274034}
   - component: {fileID: 1992274033}
   - component: {fileID: 1992274032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8746,7 +8793,7 @@ GameObject:
   - component: {fileID: 2041403269}
   - component: {fileID: 2041403271}
   - component: {fileID: 2041403270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8825,7 +8872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2064530799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: post 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9062,7 +9109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5613219250678803264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShopIconUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9143,7 +9190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 780950424157479909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseDoorway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9492,7 +9539,7 @@ GameObject:
   - component: {fileID: 810184913751663404}
   - component: {fileID: 6577445383424263146}
   - component: {fileID: 3607271074317050783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralEmmiter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10337,7 +10384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4626760140981251654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10458,7 +10505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4007921028274882549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cellRanch_Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10474,7 +10521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652027041250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10490,7 +10537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652000599079}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePlanterPlants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10506,7 +10553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652097861077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10522,7 +10569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651844680094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10538,7 +10585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651946865530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10554,7 +10601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651935322107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseCobblestones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10570,7 +10617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651656304559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBenchPaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10586,7 +10633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652556203718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBenchPlank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10602,7 +10649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652295345327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePotPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10618,7 +10665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652330145466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassWindow01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10634,7 +10681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652133268107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10650,7 +10697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653130124872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10666,7 +10713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652721166845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePlanterDirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10682,7 +10729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653613164656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10698,7 +10745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653667748886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlasBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10714,7 +10761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653387795097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10730,7 +10777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653192701304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseLamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10812,7 +10859,7 @@ GameObject:
   - component: {fileID: 1614046541195822344}
   - component: {fileID: 3395573906969546194}
   - component: {fileID: 955888128496726008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: market_screen_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11041,7 +11088,7 @@ GameObject:
   - component: {fileID: 6325649262114448325}
   - component: {fileID: 2287470430116749846}
   - component: {fileID: 1183113252292185815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePot_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11709,7 +11756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289358800003859650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: triggerActivate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11828,7 +11875,7 @@ GameObject:
   - component: {fileID: 1918761033969201380}
   - component: {fileID: 5567777754392665346}
   - component: {fileID: 4232607394097239605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassDoor_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11941,7 +11988,7 @@ GameObject:
   - component: {fileID: 5827333327154059547}
   - component: {fileID: 2161704441894217209}
   - component: {fileID: 1742277402683805881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: interior_beam_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12201,7 +12248,7 @@ GameObject:
   - component: {fileID: 1616550226595162792}
   - component: {fileID: 6255575719453800585}
   - component: {fileID: 8991308018711634878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseSide_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12387,7 +12434,7 @@ GameObject:
   - component: {fileID: 754434029890326833}
   - component: {fileID: 2789833646943501222}
   - component: {fileID: 6030633070369483133}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseCobblestones_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12485,7 +12532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1732804419072524696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12738,7 +12785,7 @@ GameObject:
   - component: {fileID: 3141518231610970902}
   - component: {fileID: 5150167843691695970}
   - component: {fileID: 2274251918572970399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBack_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12837,7 +12884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491906123183902950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13205,7 +13252,7 @@ GameObject:
   - component: {fileID: 3255684790850266554}
   - component: {fileID: 6448218523181741386}
   - component: {fileID: 2514115900247587215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBench_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13427,7 +13474,7 @@ GameObject:
   - component: {fileID: 2861040609383753895}
   - component: {fileID: 1197634073681783001}
   - component: {fileID: 2696545220977278434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePlanter_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13930,7 +13977,7 @@ GameObject:
   - component: {fileID: 4696209691647436092}
   - component: {fileID: 8273163274744768408}
   - component: {fileID: 3021039942433953734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseMain_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14105,7 +14152,7 @@ GameObject:
   - component: {fileID: 6620142741234435854}
   - component: {fileID: 3225451747185826706}
   - component: {fileID: 3225451747185826707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: market_star_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14340,7 +14387,7 @@ GameObject:
   - component: {fileID: 6040082184188729692}
   - component: {fileID: 5028211722620113861}
   - component: {fileID: 3391597967687629958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePotPlant_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14565,7 +14612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4299209977713050279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseWindow01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14681,7 +14728,7 @@ GameObject:
   - component: {fileID: 9062656648457195737}
   - component: {fileID: 7227396987291286075}
   - component: {fileID: 3626658568744938226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseContainer_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14850,7 +14897,7 @@ GameObject:
   - component: {fileID: 29390167717468880}
   - component: {fileID: 3283445658298415096}
   - component: {fileID: 2843956351754211411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseDoormat_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15288,7 +15335,7 @@ GameObject:
   - component: {fileID: 4416630728429070379}
   - component: {fileID: 6878987307092979850}
   - component: {fileID: 4103438829592652617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralBase_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15318,7 +15365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4450292541651156416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15366,7 +15413,7 @@ GameObject:
   - component: {fileID: 8128830189824016168}
   - component: {fileID: 2243065433691982986}
   - component: {fileID: 8230027081864564896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBay_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15728,7 +15775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229320469086604484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ranch Features
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16031,7 +16078,7 @@ GameObject:
   - component: {fileID: 6209465917657973890}
   - component: {fileID: 1930718735454609263}
   - component: {fileID: 7799598379581839036}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseLamp_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16082,7 +16129,7 @@ GameObject:
   - component: {fileID: 9048321057802580266}
   - component: {fileID: 2828796082878560188}
   - component: {fileID: 3516105476306022139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBenchPlank_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16209,7 +16256,7 @@ GameObject:
   - component: {fileID: 1274223669174925824}
   - component: {fileID: 1298921608821491341}
   - component: {fileID: 8633208977893339846}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassWindow01_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16954,7 +17001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5443314511434733080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Additional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17167,7 +17214,7 @@ GameObject:
   - component: {fileID: 5647894009717365429}
   - component: {fileID: 5440667619267305832}
   - component: {fileID: 5425297798909612777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseDoorway_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18366,7 +18413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6898276987474080009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: techDoorExpansion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18429,7 +18476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6819368893489309393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePlanter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18689,7 +18736,7 @@ GameObject:
   - component: {fileID: 7922869280653711178}
   - component: {fileID: 5664689240125698972}
   - component: {fileID: 4615079271645307698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassMain_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18948,7 +18995,7 @@ GameObject:
   - component: {fileID: 3640100572058529849}
   - component: {fileID: 4074324649315526536}
   - component: {fileID: 1262825996742028657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlassSide_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19049,7 +19096,7 @@ GameObject:
   - component: {fileID: 1454425529192560558}
   - component: {fileID: 933513910559296133}
   - component: {fileID: 6619916218413234834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: techDisplay1x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19367,7 +19414,7 @@ GameObject:
   - component: {fileID: 3710366322661701364}
   - component: {fileID: 2021659904526451056}
   - component: {fileID: 6116905243461639718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: market_back_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19385,7 +19432,7 @@ GameObject:
   - component: {fileID: 1129193116357580214}
   - component: {fileID: 2321578710893056202}
   - component: {fileID: 2720669995824956669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePlanterDirt_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19536,7 +19583,7 @@ GameObject:
   - component: {fileID: 1003690565124955143}
   - component: {fileID: 5125474554119877991}
   - component: {fileID: 5883889356940605591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseGlasBack_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19758,7 +19805,7 @@ GameObject:
   - component: {fileID: 2119771702312704792}
   - component: {fileID: 5380717078752498428}
   - component: {fileID: 7058687008405395240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePlanterPlants_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20057,7 +20104,7 @@ GameObject:
   - component: {fileID: 4704721526434152685}
   - component: {fileID: 8422120184091818779}
   - component: {fileID: 7248822283655189510}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseDoor_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20173,7 +20220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8978652799104890323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: techDoorExpansion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20205,7 +20252,7 @@ GameObject:
   - component: {fileID: 5823645388575577866}
   - component: {fileID: 1071806840657233534}
   - component: {fileID: 7142265113888667523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder104_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20386,7 +20433,7 @@ GameObject:
   - component: {fileID: 4163199730800386103}
   - component: {fileID: 2308663592735181793}
   - component: {fileID: 7544307626465263573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: exterior_arch1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20543,7 +20590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1450997581768743997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20969,7 +21016,7 @@ GameObject:
   - component: {fileID: 3300740998572731116}
   - component: {fileID: 298450218205108157}
   - component: {fileID: 7866590799222573903}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: prop_rail_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21002,7 +21049,7 @@ GameObject:
   - component: {fileID: 3300740998963946033}
   - component: {fileID: 298450216723308384}
   - component: {fileID: 7866590799887729556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: prop_rail_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21261,7 +21308,7 @@ GameObject:
   - component: {fileID: 3260154220682666188}
   - component: {fileID: 4521377396628615806}
   - component: {fileID: 2842762711103117736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: exterior_arch1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21558,7 +21605,7 @@ GameObject:
   - component: {fileID: 7668786286548123389}
   - component: {fileID: 8801989041765132030}
   - component: {fileID: 5543691886693847976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseBenchPaper_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21574,7 +21621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8779294568074751568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: housePot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21592,7 +21639,7 @@ GameObject:
   - component: {fileID: 4903196673777890040}
   - component: {fileID: 4177951641507015379}
   - component: {fileID: 5433121452908892350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: houseWindow01_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21652,7 +21699,7 @@ GameObject:
   - component: {fileID: 7955715774130012336}
   - component: {fileID: 6298393051099025334}
   - component: {fileID: 8351751688070354859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralPost_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21890,7 +21937,7 @@ GameObject:
   - component: {fileID: 8705402355590401085}
   - component: {fileID: 3246582703492117311}
   - component: {fileID: 8611092382154779625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: market_curve_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22157,7 +22204,6 @@ GameObject:
   - component: {fileID: 8849947326484696920}
   - component: {fileID: 8849947326484696919}
   - component: {fileID: 8849947326484696921}
-  - component: {fileID: 8849947326484696922}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -22221,18 +22267,6 @@ MonoBehaviour:
   - {fileID: 7137453911919056255}
   - {fileID: 3811642663705689400}
   inventory: {fileID: 3954529556774508007}
---- !u!114 &8849947326484696922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8849947326484696918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4539b12fc32ebf245aba8aea74a74745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &8853805291322408506
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22552,7 +22586,7 @@ GameObject:
   - component: {fileID: 311100949938274974}
   - component: {fileID: 3089240308599510120}
   - component: {fileID: 9031714149796695610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: techActivator 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22687,7 +22721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5717659842757175165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: techActivator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22752,7 +22786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8497806891773787285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: corralField
   m_TagString: Untagged
   m_Icon: {fileID: 0}

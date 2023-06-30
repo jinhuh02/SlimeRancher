@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5392168566941568035}
   - component: {fileID: 4728502612257937048}
+  - component: {fileID: 6477969066834952003}
   - component: {fileID: 4728502612257937050}
   - component: {fileID: 4728502612257937051}
   m_Layer: 0
@@ -130,8 +131,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNum: 5
   itemIcon: {fileID: 21300000, guid: fd8ea9384055f634783d632fb24ede98, type: 3}
-  itemName: "\uBD84\uD64D \uD50C\uB85C\uD2B8"
+  itemName: "\uBD84\uD64D\uC0C9 \uD50C\uB85C\uD2B8"
   isVacpackSelect: 0
+--- !u!114 &6477969066834952003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4728502612257937049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06d1506f3f205d4885a99e6b9c4652f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_name: "\uBD84\uD64D\uC0C9 \uD50C\uB85C\uD2B8"
+  my_details: "\uC544\uC774\uD15C : \uD50C\uB85C\uD2B8"
 --- !u!54 &4728502612257937050
 Rigidbody:
   m_ObjectHideFlags: 0
