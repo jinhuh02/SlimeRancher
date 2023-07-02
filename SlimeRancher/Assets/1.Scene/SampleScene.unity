@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 156357355}
   - component: {fileID: 156357354}
   - component: {fileID: 156357353}
+  - component: {fileID: 156357356}
   m_Layer: 6
   m_Name: techActivator 1 (1)
   m_TagString: Untagged
@@ -542,6 +543,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156357351}
   m_Mesh: {fileID: 5109621124704662847, guid: ebd6b6f288c69d14f91795cd63dc985f, type: 3}
+--- !u!114 &156357356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156357351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403f1eb09354c12458b299df8accfd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrier:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isLock: 1
 --- !u!1 &161313399
 GameObject:
   m_ObjectHideFlags: 0
@@ -5337,6 +5357,7 @@ GameObject:
   - component: {fileID: 972572885}
   - component: {fileID: 972572884}
   - component: {fileID: 972572883}
+  - component: {fileID: 972572886}
   m_Layer: 6
   m_Name: techActivator 1 (1)
   m_TagString: Untagged
@@ -5421,6 +5442,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972572881}
   m_Mesh: {fileID: 5109621124704662847, guid: ebd6b6f288c69d14f91795cd63dc985f, type: 3}
+--- !u!114 &972572886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972572881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403f1eb09354c12458b299df8accfd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrier: []
+  isLock: 1
 --- !u!1 &976742967
 GameObject:
   m_ObjectHideFlags: 0
@@ -7165,7 +7200,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1513596127}
-  - component: {fileID: 1513596128}
   m_Layer: 6
   m_Name: corral
   m_TagString: Untagged
@@ -7193,23 +7227,6 @@ Transform:
   m_Father: {fileID: 478981132}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1513596128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513596126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 403f1eb09354c12458b299df8accfd03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrier:
-  - {fileID: 1423522168}
-  - {fileID: 1167067466}
-  - {fileID: 298709700}
-  - {fileID: 1922906926}
 --- !u!1 &1524776848
 GameObject:
   m_ObjectHideFlags: 0
@@ -7894,7 +7911,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1671877735}
-  - component: {fileID: 1671877736}
   m_Layer: 6
   m_Name: corral
   m_TagString: Untagged
@@ -7922,23 +7938,6 @@ Transform:
   m_Father: {fileID: 478981132}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1671877736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671877734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 403f1eb09354c12458b299df8accfd03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrier:
-  - {fileID: 1807911024}
-  - {fileID: 2989361566927815052}
-  - {fileID: 569590702}
-  - {fileID: 1660111071}
 --- !u!1 &1679097962
 GameObject:
   m_ObjectHideFlags: 0
@@ -24177,6 +24176,7 @@ GameObject:
   - component: {fileID: 311100949938274974}
   - component: {fileID: 3089240308599510120}
   - component: {fileID: 9031714149796695610}
+  - component: {fileID: 9031714149796695611}
   m_Layer: 6
   m_Name: techActivator 1
   m_TagString: Untagged
@@ -24198,6 +24198,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5109621124704662847, guid: ebd6b6f288c69d14f91795cd63dc985f, type: 3}
+--- !u!114 &9031714149796695611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031714149796695609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511e53ba358ddb3489c6ad5e3177c63a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_barrier: {fileID: 0}
 --- !u!4 &9034693463421472296
 Transform:
   m_ObjectHideFlags: 0

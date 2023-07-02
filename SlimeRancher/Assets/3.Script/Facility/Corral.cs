@@ -4,19 +4,35 @@ using UnityEngine;
 
 public class Corral : MonoBehaviour
 {
-    [SerializeField] GameObject[] barrier = new GameObject[4];
+    [SerializeField] List<GameObject> barrier = new List<GameObject>();
+
+    public bool isLock = true;
 
     private void Start()
     {
-        for(int i=0; i<4; i++)
+        if (isLock)
         {
-            barrier[i].SetActive(true);
+            for (int i = 0; i < barrier.Count; i++)
+            {
+                barrier[i].SetActive(false);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < barrier.Count; i++)
+            {
+                barrier[i].SetActive(true);
+            }
         }
     }
-
+    
+    //가진 코인 개수를 빼앗고 배리어 활성화
+    //배리어 활성화
     public void ActivationBarrier()
     {
-        for (int i = 0; i < 4; i++)
+
+
+        for (int i = 0; i < barrier.Count; i++)
         {
             barrier[i].SetActive(true);
         }
