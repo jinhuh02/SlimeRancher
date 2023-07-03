@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
     IEnumerator Morning_co()
     {
         float rTime = 0f;
-        Debug.Log("≥∑¿∏∑Œ");
         while (true)
         {
             _colorAdjustments.postExposure.Interp(-4f, 0f, rTime);
@@ -133,7 +132,6 @@ public class GameManager : MonoBehaviour
     IEnumerator Night_co()
     {
         float rTime = 0f;
-        Debug.Log("π„¿∏∑Œ");
         while (true)
         {
             _colorAdjustments.postExposure.Interp(0f, -4f, rTime);

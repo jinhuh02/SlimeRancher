@@ -15,10 +15,14 @@ public class Slime : MonoBehaviour
     GameObject targetFood_obj;
     int step = 0;
 
+    private float myJumpTime;
+
     private void Start()
     {
         slime_animator = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
         slime_rigidbody = GetComponent<Rigidbody>();
+
+        myJumpTime = Random.Range(5f, 6.5f);
 
         slime_rigidbody.AddForce(Vector3.up * 700, ForceMode.Force);
         StartCoroutine(Slime_co());
@@ -33,7 +37,7 @@ public class Slime : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(myJumpTime);
             switch(Random.Range(0, 10))
             {
                 case 0:
