@@ -10,54 +10,80 @@ public class CheckPlayerForward : MonoBehaviour
     [SerializeField] Text details_text;
     [SerializeField] GameObject Press_E;
 
-    private void LateUpdate()
+    bool isFound = false;
+
+    private void Update()
     {
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, transform.forward, 50f);
+        hits = Physics.RaycastAll(transform.position, transform.forward, 20f);
 
-        for(int i=0; i<hits.Length; i++)
+        if(hits.Length > 0)
         {
-            if(hits[i].transform.GetComponent<Interpretation>() != null)
+            for (int i = 0; i < hits.Length; i++)
             {
-                if (!interpretation_ui.activeSelf)
+                if (hits[i].transform.GetComponent<Interpretation>() != null)
                 {
-                    interpretation_ui.SetActive(true);
+                    if (!interpretation_ui.activeSelf)
+                    {
+                        interpretation_ui.SetActive(true);
+                    }
+
+                    name_text.text = hits[i].transform.GetComponent<Interpretation>().my_name;
+                    details_text.text = hits[i].transform.GetComponent<Interpretation>().my_details;
+
+                    isFound = true;
+                    return;
                 }
-
-                name_text.text = hits[i].transform.GetComponent<Interpretation>().my_name;
-                details_text.text = hits[i].transform.GetComponent<Interpretation>().my_details;
-
-                return;
-            }
-            else if (hits[i].transform.GetComponent<Corral>() != null)
-            {
-                Press_E.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                else if (hits[i].transform.GetComponent<Corral>() != null)
                 {
-                    Press_E.SetActive(false);
-                    hits[i].transform.GetComponent<Corral>().ShowCorralUI();
-                }
+                    Press_E.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Press_E.SetActive(false);
+                        hits[i].transform.GetComponent<Corral>().ShowCorralUI();
+                    }
 
-            }
-            else if (hits[i].transform.GetComponent<Unlock>() != null)
-            {
-                Press_E.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                    isFound = true;
+                    return;
+                }
+                else if (hits[i].transform.GetComponent<Unlock>() != null)
                 {
-                    Press_E.SetActive(false);
-                    hits[i].transform.GetComponent<Unlock>().ShowUnlockUI();
+                    Press_E.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Press_E.SetActive(false);
+                        hits[i].transform.GetComponent<Unlock>().ShowUnlockUI();
+                    }
+
+                    isFound = true;
+                    return;
+                }
+                else
+                {
+                    isFound = false;
                 }
             }
-            else if (interpretation_ui.activeSelf)
+        }
+        else
+        {
+            isFound = false;
+        }
+        
+
+
+        if (!isFound)
+        {
+            if (interpretation_ui.activeSelf)
             {
                 interpretation_ui.SetActive(false);
-            }else if (Press_E.activeSelf)
+            }
+            else if (Press_E.activeSelf)
             {
                 Press_E.SetActive(false);
             }
         }
+        
 
-
-        Debug.DrawRay(transform.position, transform.forward * 50f, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * 20f, Color.red);
     }
 }

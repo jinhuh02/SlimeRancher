@@ -44,11 +44,13 @@ public class Corral : MonoBehaviour
     {
         corral_UI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
+        GameManager.instance.isUIActivation = true;
     }
 
     public void ExitCorralUI()
     {
         corral_UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        GameManager.instance.isUIActivation = false;
     }
 }

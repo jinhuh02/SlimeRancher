@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Market : MonoBehaviour
 {
-    [SerializeField] Text coin_text;
-    int coin = 0;
+    
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,8 +13,7 @@ public class Market : MonoBehaviour
         {
             Debug.Log("1개 접수! 코인증가!");
             Destroy(collision.gameObject);
-            coin += 100;
-            coin_text.text = ""+coin;
+            GameManager.instance.ComputeCoinValue(100);
         }
     }
 }

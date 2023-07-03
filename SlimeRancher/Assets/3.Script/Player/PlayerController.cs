@@ -24,48 +24,50 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if(isGround && velocity.y < 0)
+        if (!GameManager.instance.isUIActivation)
         {
-            velocity.y = 0f;
-        }
+            isGround = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        characterController.Move(move * speed * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump") && isGround)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -3f * gravity);
-            if (!isJump)
+            if (isGround && velocity.y < 0)
             {
-                isJump = true;
+                velocity.y = 0f;
             }
-        }
-        else if(isJump && isGround)
-        {
-            isJump = false;
-        }
 
-        
-        if (isShift && Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            speed = 20;
-            isShift = false;
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+
+            characterController.Move(move * speed * Time.deltaTime);
+
+            if (Input.GetButtonDown("Jump") && isGround)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -3f * gravity);
+                if (!isJump)
+                {
+                    isJump = true;
+                }
+            }
+            else if (isJump && isGround)
+            {
+                isJump = false;
+            }
+
+
+            if (isShift && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                speed = 20;
+                isShift = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                isShift = true;
+                speed = 40;
+            }
+
+            velocity.y += gravity * Time.deltaTime;
+
+            characterController.Move(velocity * Time.deltaTime);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            isShift = true;
-            speed = 40;
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-
-        characterController.Move(velocity * Time.deltaTime);
-
     }
 }

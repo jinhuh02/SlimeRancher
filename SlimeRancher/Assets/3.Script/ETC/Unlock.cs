@@ -24,11 +24,13 @@ public class Unlock : MonoBehaviour
     {
         unlock_UI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
+        GameManager.instance.isUIActivation = true;
     }
     public void ExitUnlockUI()
     {
         unlock_UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        GameManager.instance.isUIActivation = false;
     }
 
 
