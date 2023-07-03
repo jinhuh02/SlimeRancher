@@ -8,6 +8,8 @@ public class Corral : MonoBehaviour
 
     public bool isLock = true;
 
+    [SerializeField] GameObject corral_UI;
+
     private void Start()
     {
         if (isLock)
@@ -31,10 +33,22 @@ public class Corral : MonoBehaviour
     public void ActivationBarrier()
     {
 
-
+        Debug.Log("구매하였습니다");
         for (int i = 0; i < barrier.Count; i++)
         {
             barrier[i].SetActive(true);
         }
+    }
+
+    public void ShowCorralUI()
+    {
+        corral_UI.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void ExitCorralUI()
+    {
+        corral_UI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
