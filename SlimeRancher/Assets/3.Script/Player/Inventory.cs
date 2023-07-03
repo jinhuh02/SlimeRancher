@@ -106,6 +106,8 @@ public class Inventory : MonoBehaviour
             UnselectedUI[selectInvenNum].SetActive(false);
             icon_UI[selectInvenNum].gameObject.SetActive(true);
             icon_UI[selectInvenNum].sprite = itemObj.GetComponent<Item>().itemIcon;
+            icon_UI[selectInvenNum].rectTransform.sizeDelta = new Vector2(itemObj.GetComponent<Item>().iconSize_x, itemObj.GetComponent<Item>().iconSize_y);
+            Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
             name_UI[selectInvenNum].text = itemObj.GetComponent<Item>().itemName;
             count_UI[selectInvenNum].text = "x " + itemCount[selectInvenNum];
 
@@ -125,6 +127,8 @@ public class Inventory : MonoBehaviour
                 UnselectedUI[i].SetActive(false);
                 icon_UI[i].gameObject.SetActive(true);
                 icon_UI[i].sprite = itemObj.GetComponent<Item>().itemIcon;
+                icon_UI[i].rectTransform.sizeDelta = new Vector2(itemObj.GetComponent<Item>().iconSize_x, itemObj.GetComponent<Item>().iconSize_y);
+                Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
                 name_UI[i].text = itemObj.GetComponent<Item>().itemName;
                 count_UI[i].text = "x " + itemCount[i];
 

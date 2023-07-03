@@ -66,7 +66,6 @@ public class Vacpack : MonoBehaviour
             {
                 selectInvenNum--;
             }
-            Debug.Log("선택된 인벤토리 : " + selectInvenNum);
             inventory.ShowSelectUI(selectInvenNum);
         }
         else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
@@ -79,7 +78,6 @@ public class Vacpack : MonoBehaviour
             {
                 selectInvenNum++;
             }
-            Debug.Log("선택된 인벤토리 : " + selectInvenNum);
             inventory.ShowSelectUI(selectInvenNum);
         }
     }

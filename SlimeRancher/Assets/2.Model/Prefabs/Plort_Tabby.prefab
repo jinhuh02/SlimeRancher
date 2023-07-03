@@ -226,6 +226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNum: 6
   itemIcon: {fileID: 21300000, guid: fd8ea9384055f634783d632fb24ede98, type: 3}
+  iconSize_x: 334
+  iconSize_y: 420
   itemName: "\uB0E5\uC774 \uD50C\uB85C\uD2B8"
   isVacpackSelect: 0
 --- !u!114 &-8678396970689711345
