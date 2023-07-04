@@ -20,7 +20,16 @@ public class Suck : MonoBehaviour
             other.isTrigger = true;
             return;
         }
-        else if (other.transform.CompareTag("Food") || other.transform.CompareTag("Item"))
+        else if (other.transform.CompareTag("Food"))
+        {
+            StartCoroutine(Suck_co(other, true, false));
+            other.GetComponent<Item>().isVacpackSelect = true;
+            selectFalse.Enqueue(other.GetComponent<Item>());
+            other.isTrigger = true;
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            return;
+        }
+        else if (other.transform.CompareTag("Item"))
         {
             StartCoroutine(Suck_co(other, true, false));
             other.GetComponent<Item>().isVacpackSelect = true;

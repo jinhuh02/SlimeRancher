@@ -81,7 +81,7 @@ public class Inventory : MonoBehaviour
                 objBox[i, itemCount[i]] = itemObj;
                 objBox[i, itemCount[i]].SetActive(false);
                 itemCount[i]++;
-                Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
+                //Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
 
                 count_UI[i].text = "x " + itemCount[i];
                 return;
@@ -101,13 +101,13 @@ public class Inventory : MonoBehaviour
             objBox[selectInvenNum, 0] = itemObj;
             objBox[selectInvenNum, 0].SetActive(false);
             itemCount[selectInvenNum]++;
-            Debug.Log(itemNum + " 를 " + selectInvenNum + "번 가방에 수납 | 현재 " + itemCount[selectInvenNum] + "개");
+            //Debug.Log(itemNum + " 를 " + selectInvenNum + "번 가방에 수납 | 현재 " + itemCount[selectInvenNum] + "개");
 
             UnselectedUI[selectInvenNum].SetActive(false);
             icon_UI[selectInvenNum].gameObject.SetActive(true);
             icon_UI[selectInvenNum].sprite = itemObj.GetComponent<Item>().itemIcon;
             icon_UI[selectInvenNum].rectTransform.sizeDelta = new Vector2(itemObj.GetComponent<Item>().iconSize_x, itemObj.GetComponent<Item>().iconSize_y);
-            Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
+            //Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
             name_UI[selectInvenNum].text = itemObj.GetComponent<Item>().itemName;
             count_UI[selectInvenNum].text = "x " + itemCount[selectInvenNum];
 
@@ -122,13 +122,13 @@ public class Inventory : MonoBehaviour
                 objBox[i, 0] = itemObj;
                 objBox[i, 0].SetActive(false);
                 itemCount[i]++;
-                Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
+                //Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
 
                 UnselectedUI[i].SetActive(false);
                 icon_UI[i].gameObject.SetActive(true);
                 icon_UI[i].sprite = itemObj.GetComponent<Item>().itemIcon;
                 icon_UI[i].rectTransform.sizeDelta = new Vector2(itemObj.GetComponent<Item>().iconSize_x, itemObj.GetComponent<Item>().iconSize_y);
-                Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
+                //Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
                 name_UI[i].text = itemObj.GetComponent<Item>().itemName;
                 count_UI[i].text = "x " + itemCount[i];
 

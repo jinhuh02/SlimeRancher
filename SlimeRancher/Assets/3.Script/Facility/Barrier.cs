@@ -15,7 +15,7 @@ public class Barrier : MonoBehaviour
     {
         if (other.CompareTag("Slime"))
         {
-            Debug.Log("나가지마");
+            //Debug.Log("나가지마");
             other.GetComponent<Rigidbody>().velocity = -other.GetComponent<Rigidbody>().velocity * 0.9f;
 
         }
