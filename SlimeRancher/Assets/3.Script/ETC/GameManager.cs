@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         float rTime = 0f;
         while (true)
         {
-            _colorAdjustments.postExposure.Interp(-4f, 0f, rTime);
+            _colorAdjustments.postExposure.Interp(-3.5f, 0f, rTime);
             rTime += 0.001f;
             yield return new WaitForSeconds(0.1f);
             if (rTime > 1)
@@ -134,12 +134,12 @@ public class GameManager : MonoBehaviour
         float rTime = 0f;
         while (true)
         {
-            _colorAdjustments.postExposure.Interp(0f, -4f, rTime);
+            _colorAdjustments.postExposure.Interp(0f, -3.5f, rTime);
             rTime += 0.001f;
             yield return new WaitForSeconds(0.1f);
             if (rTime > 1)
             {
-                _colorAdjustments.postExposure.value = -4f;
+                _colorAdjustments.postExposure.value = -3.5f;
                 break;
             }
         }

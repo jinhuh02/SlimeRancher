@@ -48,7 +48,7 @@ MonoBehaviour:
     min: 0
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.8592897, b: 0.8160377, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -57,7 +57,7 @@ MonoBehaviour:
     m_Value: 0
   skipIterations:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 5
     min: 0
     max: 16
   dirtTexture:
@@ -91,7 +91,7 @@ MonoBehaviour:
     max: 100
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -102,6 +102,6 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 10
     min: -100
     max: 100

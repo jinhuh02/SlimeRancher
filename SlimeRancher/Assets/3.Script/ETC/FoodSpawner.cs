@@ -19,9 +19,8 @@ public class FoodSpawner : MonoBehaviour
     public void SpawnCountUp()
     {
         spawnCount++;
-        Debug.Log(spawnCount);
 
-        if (spawnCount == food_pos.Count)
+        if (spawnCount == food_pos.Count && gameObject.activeInHierarchy)
         {
             spawnCount = 0;
             StartCoroutine(CreationFood_co());
