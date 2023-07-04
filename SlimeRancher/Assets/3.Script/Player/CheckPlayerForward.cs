@@ -34,7 +34,7 @@ public class CheckPlayerForward : MonoBehaviour
                     isFound = true;
                     return;
                 }
-                else if (hits[i].transform.GetComponent<Corral>() != null)
+                else if (hits[i].transform.GetComponent<Corral>() != null && hits[i].transform.GetComponent<Corral>().enabled)
                 {
                     Press_E.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))
@@ -46,7 +46,7 @@ public class CheckPlayerForward : MonoBehaviour
                     isFound = true;
                     return;
                 }
-                else if (hits[i].transform.GetComponent<Unlock>() != null)
+                else if (hits[i].transform.GetComponent<Unlock>() != null && hits[i].transform.GetComponent<Unlock>().enabled)
                 {
                     Press_E.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.E))

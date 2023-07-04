@@ -9,14 +9,20 @@ public class Unlock : MonoBehaviour
     [SerializeField] GameObject my_barrier;
     [SerializeField] GameObject unlock_UI;
 
+    bool isLock =true;
+
     //가진 코인의 수가 250을 넘는다면 
     //코인 빼앗고 배리어 비활성화
     public void Unlock_Barrier()
-    {
-        Debug.Log("배리어 해제");
-
-        my_barrier.SetActive(false);
-
+    {   
+        if (GameManager.instance.myCoin >= 250 && isLock)
+        {
+            Debug.Log("배리어 해제");
+            GameManager.instance.ComputeCoinValue(-250);
+            my_barrier.SetActive(false);
+            isLock = false;
+            this.enabled = false;
+        }
     }
 
 

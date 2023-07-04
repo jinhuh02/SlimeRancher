@@ -7,7 +7,7 @@ public class SlimeSpawner : MonoBehaviour
     [SerializeField] GameObject slime_object;
 
     float spawnTime = 3; //기본값 3
-    int limitSlimeCount = 25; //슬라임개수제한
+    [SerializeField] int limitSlimeCount = 25; //슬라임개수제한
     int currentSlimeCount = 0; //현재 생성된 슬라임의 수
 
     private void Start()

@@ -32,11 +32,16 @@ public class Corral : MonoBehaviour
     //배리어 활성화
     public void ActivationBarrier()
     {
-
-        Debug.Log("구매하였습니다");
-        for (int i = 0; i < barrier.Count; i++)
+        if(GameManager.instance.myCoin >= 250 && isLock)
         {
-            barrier[i].SetActive(true);
+            Debug.Log("구매하였습니다");
+            GameManager.instance.ComputeCoinValue(-250);
+            for (int i = 0; i < barrier.Count; i++)
+            {
+                barrier[i].SetActive(true);
+            }
+            isLock = false;
+            this.enabled = false;
         }
     }
 
