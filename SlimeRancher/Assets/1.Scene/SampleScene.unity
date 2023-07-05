@@ -7038,7 +7038,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.7
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -45920,7 +45920,7 @@ CharacterController:
   m_Height: 2.29
   m_Radius: 0.59
   m_SlopeLimit: 45
-  m_StepOffset: 2
+  m_StepOffset: 3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0.03, y: 1, z: 0.38}
