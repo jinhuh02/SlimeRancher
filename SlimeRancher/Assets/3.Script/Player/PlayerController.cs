@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     //bool isForward = false;
     //bool isBackward = false;
 
+    [SerializeField] GameObject ESC_menu;
+
     void Update()
     {
         if (!GameManager.instance.isUIActivation)
@@ -68,6 +70,11 @@ public class PlayerController : MonoBehaviour
             velocity.y += gravity * Time.deltaTime;
 
             characterController.Move(velocity * Time.deltaTime);
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                FindObjectOfType<ESCmenu>().ShowESC_UI();
+            }
         }
     }
 }
