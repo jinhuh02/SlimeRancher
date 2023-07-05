@@ -38,17 +38,25 @@ public class GameManager : MonoBehaviour
     //WASD도 Shift도 안먹히도록
     public bool isUIActivation = false;
 
-    private Volume _postProcessVolume;
+    public Volume _postProcessVolume;
     private ColorAdjustments _colorAdjustments;
+    public Bloom _bloom;
 
     private void Start()
     {
         _postProcessVolume = FindObjectOfType<Volume>();
         _postProcessVolume.profile.TryGet(out _colorAdjustments);
+        _postProcessVolume.profile.TryGet(out _bloom);
+
         StartCoroutine(TimeCheck_co());
+        ComputeCoinValue(0);
 
         Time.timeScale = 1;
+
+        
     }
+
+
 
     public void ComputeCoinValue(int num)
     {
@@ -56,6 +64,8 @@ public class GameManager : MonoBehaviour
         coin_text.text = "" + myCoin;
     }
 
+
+    #region 시간
     IEnumerator TimeCheck_co()
     {
         while (true)
@@ -144,4 +154,8 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    #endregion
+
+
 }

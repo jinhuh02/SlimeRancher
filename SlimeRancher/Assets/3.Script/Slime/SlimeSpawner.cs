@@ -26,6 +26,7 @@ public class SlimeSpawner : MonoBehaviour
                 currentSlimeCount++;
                 GameObject slime = Instantiate(slime_object);
                 slime.transform.position = transform.position;
+                slime.transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
     }
