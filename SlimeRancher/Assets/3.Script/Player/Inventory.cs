@@ -91,6 +91,11 @@ public class Inventory : MonoBehaviour
                 itemCount[i]++;
                 //Debug.Log(itemNum + " 를 " + i + "번 가방에 수납 | 현재 " + itemCount[i] + "개");
 
+                if(itemObj.layer == 7)
+                {
+                    itemObj.layer = 0;
+                }
+
                 count_UI[i].text = "x " + itemCount[i];
                 return;
             }
@@ -117,6 +122,12 @@ public class Inventory : MonoBehaviour
             icon_UI[selectInvenNum].rectTransform.sizeDelta = new Vector2(itemObj.GetComponent<Item>().iconSize_x, itemObj.GetComponent<Item>().iconSize_y);
             //Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
             name_UI[selectInvenNum].text = itemObj.GetComponent<Item>().itemName;
+
+            if (itemObj.layer == 7)
+            {
+                itemObj.layer = 0;
+            }
+
             count_UI[selectInvenNum].text = "x " + itemCount[selectInvenNum];
 
             return;
@@ -138,6 +149,12 @@ public class Inventory : MonoBehaviour
                 icon_UI[i].rectTransform.sizeDelta = new Vector2(itemObj.GetComponent<Item>().iconSize_x, itemObj.GetComponent<Item>().iconSize_y);
                 //Debug.Log(itemObj.GetComponent<Item>().iconSize_x + " | " + itemObj.GetComponent<Item>().iconSize_y);
                 name_UI[i].text = itemObj.GetComponent<Item>().itemName;
+
+                if (itemObj.layer == 7)
+                {
+                    itemObj.layer = 0;
+                }
+
                 count_UI[i].text = "x " + itemCount[i];
 
                 return;
