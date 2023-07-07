@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -23,7 +22,7 @@ public class AudioManager : MonoBehaviour
     //플레이어도 갖고있음 PlayerController [완료!!!!]
 
     [Header("오디오 클립")]
-    [SerializeField] AudioClip[] backgroundClip = new AudioClip[2]; 
+    [SerializeField] AudioClip[] backgroundClip = new AudioClip[2];
     [SerializeField] AudioClip ranch_build; //우리 개방 및 배리어 해제
     [SerializeField] AudioClip ui_drone_activate; //ui 활성화
     [SerializeField] AudioClip ui_drone_exit; //ui 비활성화
@@ -44,7 +43,7 @@ public class AudioManager : MonoBehaviour
                 case true:
                     background_Audio.clip = backgroundClip[0]; //musicRanchTheme
                     background_Audio.Play();
-                    yield return new WaitForSeconds(backgroundClip[0].length); 
+                    yield return new WaitForSeconds(backgroundClip[0].length);
                     break;
                 case false:
                     background_Audio.clip = backgroundClip[1]; //musicRanchThemeNight
@@ -52,7 +51,7 @@ public class AudioManager : MonoBehaviour
                     yield return new WaitForSeconds(backgroundClip[1].length);
                     break;
             }
-            
+
         }
     }
 
@@ -72,11 +71,13 @@ public class AudioManager : MonoBehaviour
         effect_Audio.clip = ui_drone_exit;
         effect_Audio.Play();
     }
+
     public void Play_UI_Button(int num)
     {
         effect_Audio.clip = ui_button[num];
         effect_Audio.Play();
     }
+
 
     public void Play_InventoryChainge(bool isLeft)
     {
