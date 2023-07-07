@@ -19,10 +19,25 @@ public class PlayerController : MonoBehaviour
     bool isGround = true;
     bool isJump = false;
     bool isShift = false;
+    bool isFootprint = false;
     //bool isForward = false;
     //bool isBackward = false;
 
     [SerializeField] GameObject ESC_menu;
+    AudioSource audioSource;
+
+    [Header("오디오 클립")]
+    [SerializeField] AudioClip[] footprint = new AudioClip[5];
+    [SerializeField] AudioClip jump;
+    [SerializeField] AudioClip jumpLand;
+
+    float x = 0;
+    float z = 0;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -35,12 +50,19 @@ public class PlayerController : MonoBehaviour
                 velocity.y = 0f;
             }
 
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            x = Input.GetAxis("Horizontal");
+            z = Input.GetAxis("Vertical");
 
             Vector3 move = transform.right * x + transform.forward * z;
 
             characterController.Move(move * speed * Time.deltaTime);
+
+            if(!isFootprint && (x != 0 || z != 0))
+            {
+                isFootprint = true;
+                StartCoroutine(FootprintSound_co());
+            }
+
 
             if (Input.GetButtonDown("Jump") && isGround)
             {
@@ -48,11 +70,15 @@ public class PlayerController : MonoBehaviour
                 if (!isJump)
                 {
                     isJump = true;
+                    audioSource.clip = jump;
+                    audioSource.Play();
                 }
             }
             else if (isJump && isGround)
             {
                 isJump = false;
+                audioSource.clip = jumpLand;
+                audioSource.Play();
             }
 
 
@@ -75,6 +101,34 @@ public class PlayerController : MonoBehaviour
             {
                 FindObjectOfType<ESCmenu>().ShowESC_UI();
             }
+        }
+    }
+
+    IEnumerator FootprintSound_co()
+    {
+        while (true)
+        {
+            switch (isShift)
+            {
+                case true:
+                    yield return new WaitForSeconds(0.2f);
+                    break;
+                case false:
+                    yield return new WaitForSeconds(0.5f);
+                    break;
+            }
+
+            if(isGround && (x!=0 || z != 0))
+            {
+                audioSource.clip = footprint[Random.Range(0, 5)];
+                audioSource.Play();
+            }
+            else
+            {
+                isFootprint = false;
+                StopAllCoroutines();
+            }
+
         }
     }
 }

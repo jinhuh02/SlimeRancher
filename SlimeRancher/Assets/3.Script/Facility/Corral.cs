@@ -36,6 +36,7 @@ public class Corral : MonoBehaviour
         {
             Debug.Log("구매하였습니다");
             GameManager.instance.ComputeCoinValue(-250);
+            AudioManager.instance.Play_RanchBuild();
             for (int i = 0; i < barrier.Count; i++)
             {
                 barrier[i].SetActive(true);
@@ -50,6 +51,7 @@ public class Corral : MonoBehaviour
         corral_UI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
         GameManager.instance.isUIActivation = true;
+        AudioManager.instance.Play_UI_Activate();
     }
 
     public void ExitCorralUI()
@@ -57,5 +59,6 @@ public class Corral : MonoBehaviour
         corral_UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameManager.instance.isUIActivation = false;
+        AudioManager.instance.Play_UI_Exit();
     }
 }

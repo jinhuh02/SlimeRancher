@@ -522,7 +522,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8999266871004273199}
-  - {fileID: 645064877211780732}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -556,6 +555,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slime_animator: {fileID: 6568808471220555087}
   myPlort: {fileID: 5196883303282724272, guid: 87a9cf7f40b23014aab491aec354524a, type: 3}
+  bounce:
+  - {fileID: 8300000, guid: bd67535d8d60a824e812d846c2691202, type: 3}
+  - {fileID: 8300000, guid: e0581bc431801374e99fdd8743d6393a, type: 3}
+  - {fileID: 8300000, guid: 9cc9e449cce2ddf47b1d1574a2b42cf5, type: 3}
+  - {fileID: 8300000, guid: 39337b5088ff66f4aa305165d0284be3, type: 3}
+  bite: {fileID: 8300000, guid: 4add97751322a0249a1e8cd8232a6026, type: 3}
+  plort: {fileID: 8300000, guid: 21191532207a23245a14670e20e31a77, type: 3}
+  slimevoice:
+  - {fileID: 8300000, guid: 12f5e07cf36277d41b79f43de144ae5c, type: 3}
+  - {fileID: 8300000, guid: 7213a763df1a15c4eaec305e5578d401, type: 3}
+  - {fileID: 8300000, guid: 01c0c8aa943dd9340a391434e97c2a25, type: 3}
+  - {fileID: 8300000, guid: 4dbc5c6e2fedddf4bbe5401991af35a7, type: 3}
+  - {fileID: 8300000, guid: ac31bbf86ad2f614ea9c63a8ea066e72, type: 3}
+  - {fileID: 8300000, guid: 09282f6379b28f64a8916250c69c6995, type: 3}
+  - {fileID: 8300000, guid: f6c7e58b5639da641b2ce3d1e65dce8f, type: 3}
+  - {fileID: 8300000, guid: 86e7bcc9a15750c4daac58605834148a, type: 3}
+  - {fileID: 8300000, guid: 0629078f404a7f646823505610e4a3b9, type: 3}
+  - {fileID: 8300000, guid: 9d2dabb22901497448bb0789828b4fd1, type: 3}
+  thrown:
+  - {fileID: 8300000, guid: 2f2714eddebc1754c8e8e05495d0b991, type: 3}
+  - {fileID: 8300000, guid: 2bdd5967e20d62d4bb792cadf37acb28, type: 3}
+  - {fileID: 8300000, guid: e81b98de689492b43b5e061f2eecdac5, type: 3}
+  - {fileID: 8300000, guid: f1e5898abf0ee884b9e2c1a4b6fd7b32, type: 3}
+  splat:
+  - {fileID: 8300000, guid: ed59eb67e28261f4b93df946af820820, type: 3}
+  - {fileID: 8300000, guid: ed7667a1add32be458e9b89bf5623862, type: 3}
+  - {fileID: 8300000, guid: 6260ce7c8bfad7145bd3210ef198d4c9, type: 3}
 --- !u!114 &5292750692345339274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,7 +639,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 9110493636966290252, guid: 953c9c07f8273b44886814a869abf0f3, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -623,9 +649,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 90
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -658,7 +684,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -902,6 +928,7 @@ Transform:
   - {fileID: 1318644438780715924}
   - {fileID: 5528412376655528784}
   - {fileID: 8140918929521083598}
+  - {fileID: 645064877211780732}
   m_Father: {fileID: 1116179944530382443}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0.106692985, y: 0.037607264, z: -0.00007753384}
@@ -990,13 +1017,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8286811539850476386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.72, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_LocalRotation: {x: 0.03759074, y: -0.6842558, z: 0.026257524, w: 0.7277991}
+  m_LocalPosition: {x: 0.21065491, y: -1.9261385, z: -0.049960617}
+  m_LocalScale: {x: 3.72688, y: 3.72688, z: 3.72688}
   m_Children: []
-  m_Father: {fileID: 6334437471281470228}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 3066127156426376511}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 5.201, y: -86.502, z: -0.761}
 --- !u!33 &902322766119208924
 MeshFilter:
   m_ObjectHideFlags: 0

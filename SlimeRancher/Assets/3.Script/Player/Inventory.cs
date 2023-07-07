@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     int[] bag = new int[4];
     int[] itemCount = new int[4];
 
-    GameObject[,] objBox = new GameObject[4,20];
+    GameObject[,] objBox = new GameObject[4, 20];
 
     [SerializeField] GameObject player;
 
@@ -20,6 +20,12 @@ public class Inventory : MonoBehaviour
     [SerializeField] Image[] icon_UI = new Image[4];
     [SerializeField] Text[] name_UI = new Text[4];
     [SerializeField] Text[] count_UI = new Text[4];
+
+    [Header("오디오 클립")]
+    [SerializeField] AudioClip shoot;
+    [SerializeField] AudioClip emptyshot;
+    [SerializeField] AudioClip sustained;
+    AudioSource audioSource;
 
     private void Start()
     {
@@ -34,6 +40,8 @@ public class Inventory : MonoBehaviour
         }
 
         SelectedUI[0].transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void ShowSelectUI(int selectNum)
@@ -154,6 +162,18 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void PlaySustainedAudio()
+    {
+        audioSource.clip = sustained;
+        audioSource.Play();
+    }
+    public void StopSustainedAudio()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
 
     //좌클릭으로 수납되어있는 아이템을 내보낸다
     public void ExportItem(int bagNum)
@@ -166,6 +186,9 @@ public class Inventory : MonoBehaviour
             name_UI[bagNum].text = string.Empty;
             count_UI[bagNum].text = string.Empty;
             bag[bagNum] = 0;
+
+            audioSource.clip = emptyshot;
+            audioSource.Play();
             return;
         }
 
@@ -180,9 +203,11 @@ public class Inventory : MonoBehaviour
         objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().velocity = Vector3.zero;
         objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().AddForce(transform.rotation * Vector3.forward * 2500, ForceMode.Force);
         itemCount[bagNum]--;
-        
 
-        if(itemCount[bagNum] == 0)
+        audioSource.clip = shoot;
+        audioSource.Play();
+
+        if (itemCount[bagNum] == 0)
         {
             UnselectedUI[bagNum].SetActive(true);
             icon_UI[bagNum].gameObject.SetActive(false);

@@ -6,7 +6,7 @@ public class Suck : MonoBehaviour
 {
     [SerializeField] GameObject vacpack;
     float pullforce = 200; //speed
-    float refeshRate = 1;
+    float refeshRate = 0.3f;
 
     Queue<Item> selectFalse = new Queue<Item>();
 
@@ -18,6 +18,9 @@ public class Suck : MonoBehaviour
             other.GetComponent<Item>().isVacpackSelect = true;
             selectFalse.Enqueue(other.GetComponent<Item>());
             other.isTrigger = true;
+
+            other.GetComponent<Slime>().PlayCatchAudio();
+
             return;
         }
         else if (other.transform.CompareTag("Food"))

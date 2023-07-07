@@ -19,6 +19,7 @@ public class Unlock : MonoBehaviour
         {
             Debug.Log("배리어 해제");
             GameManager.instance.ComputeCoinValue(-250);
+            AudioManager.instance.Play_RanchBuild();
             my_barrier.SetActive(false);
             isLock = false;
             this.enabled = false;
@@ -31,12 +32,14 @@ public class Unlock : MonoBehaviour
         unlock_UI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
         GameManager.instance.isUIActivation = true;
+        AudioManager.instance.Play_UI_Activate();
     }
     public void ExitUnlockUI()
     {
         unlock_UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameManager.instance.isUIActivation = false;
+        AudioManager.instance.Play_UI_Exit();
     }
 
 

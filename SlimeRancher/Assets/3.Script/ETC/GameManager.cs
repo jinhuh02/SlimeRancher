@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public float currentTimeHour = 9;
     public float currentTimeSecond = 0;
     public int currentDays = 1;
+    public bool isnight = false;
 
     //UI가 켜져있을경우 마우스를 움직여도 카메라 회전이 안되도록
     //WASD도 Shift도 안먹히도록
@@ -53,9 +54,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1;
 
-        
     }
-
 
 
     public void ComputeCoinValue(int num)
@@ -84,10 +83,12 @@ public class GameManager : MonoBehaviour
                     case 4:
                         //서서히 아침이 된다
                         StartCoroutine(Morning_co());
+                        isnight = false;
                         break;
                     case 18:
                         //밤이 된다
                         StartCoroutine(Night_co());
+                        isnight = true;
                         break;
                     case 24:
                         currentTimeHour = 0;

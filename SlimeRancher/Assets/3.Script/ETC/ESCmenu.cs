@@ -8,23 +8,34 @@ using UnityEngine.Audio;
 
 public class ESCmenu : MonoBehaviour
 {
+    [Header("옵션 화면전환")]
     [SerializeField] GameObject ESC_menu;
     [SerializeField] GameObject option_menu;
     [SerializeField] GameObject op_gamePlay;
     [SerializeField] GameObject op_sound;
     [SerializeField] Button gamePlay_btn;
     [SerializeField] Button sound_btn;
-    [SerializeField] Dropdown resolution_dropdown;
-    [SerializeField] GameObject bloom_object;
 
-    [Header("해상도 설정")]
+    [Header("[해상도 설정]")]
+    [SerializeField] Dropdown resolution_dropdown;
+    [SerializeField] Toggle fullScreen_toggle;
     public int selectResolution = 9; //기본값
     public bool fullScreen = false; //기본값
     int[] horizontal = new int[13];
     int[] vertical = new int[13];
 
 
-    [Header("오디오 설정")]
+    [Header("[Bloom On/Off]")]
+    [SerializeField] Toggle bloom_Toggle;
+    [SerializeField] GameObject bloom_object;
+
+    [Header("[시야 크기]")]
+    [SerializeField] Slider viewSizeSlider;
+
+    [Header("[마우스 감도]")]
+    [SerializeField] Slider sensitivitySlider;
+
+    [Header("[오디오 설정]")]
     [SerializeField] AudioMixer mixer;
     [SerializeField] Slider masterAudioSlider;
     [SerializeField] Slider backgroundAudioSlider;
@@ -83,7 +94,6 @@ public class ESCmenu : MonoBehaviour
 
         #endregion
 
-
         masterVolum = PlayerPrefs.GetFloat("masterVolum");
         backgroundVolum = PlayerPrefs.GetFloat("backgroundVolum");
         effectVolum = PlayerPrefs.GetFloat("effectVolum");
@@ -96,15 +106,86 @@ public class ESCmenu : MonoBehaviour
         SetAudioVolum(1);
         SetAudioVolum(2);
 
-        Debug.Log("masterVolum : " + masterVolum);
-        Debug.Log("backgroundVolum : " + backgroundVolum);
-        Debug.Log("effectVolum : " + effectVolum);
+        StartCoroutine(PlayerSetting_co());
+    }
+
+    IEnumerator PlayerSetting_co()
+    {
+        yield return null;
+
+        if(PlayerPrefs.GetInt("selectResolution") != 0)
+        {
+            resolution_dropdown.value = PlayerPrefs.GetInt("selectResolution")-1;
+        }
+        else
+        {
+            resolution_dropdown.value = selectResolution;
+        }
+        
+        switch (PlayerPrefs.GetInt("fullScreen"))
+        {
+            case 0: //기본값
+                fullScreen = true;
+                break;
+            case 1:
+                fullScreen = true;
+                break;
+            case 2:
+                fullScreen = false;
+                break;
+        }
+        
+        switch (fullScreen)
+        {
+            case true:
+                fullScreen_toggle.isOn = true;
+                fullScreen_toggle.transform.GetChild(0).gameObject.SetActive(true);
+                break;
+
+            case false:
+                fullScreen_toggle.isOn = false;
+                fullScreen_toggle.transform.GetChild(0).gameObject.SetActive(false);
+                break;
+        }
+
+        ChangeResolution();
+
+        
+        switch (PlayerPrefs.GetInt("bloom"))
+        {
+            case 1:
+                GameManager.instance._bloom.active = false;
+                bloom_Toggle.isOn = false;
+                bloom_Toggle.transform.GetChild(0).gameObject.SetActive(false);
+                break;
+            case 2:
+                GameManager.instance._bloom.active = true;
+                bloom_Toggle.isOn = true;
+                bloom_Toggle.transform.GetChild(0).gameObject.SetActive(true);
+                break;
+        }
+
+
+        if(PlayerPrefs.GetFloat("viewSize") != 0)
+        {
+            viewSizeSlider.value = PlayerPrefs.GetFloat("viewSize");
+            Camera.main.fieldOfView = viewSizeSlider.value;
+            viewSizeSlider.transform.GetChild(3).GetComponent<Text>().text = "" + (int)viewSizeSlider.value;
+        }
+        
+        if(PlayerPrefs.GetFloat("sensitivity") != 0)
+        {
+            FindObjectOfType<CameraController>().mouseSensitivity = PlayerPrefs.GetFloat("sensitivity");
+            sensitivitySlider.transform.GetChild(3).GetComponent<Text>().text = "" + (int)sensitivitySlider.value;
+        }
+
     }
 
     public void ShowESC_UI()
     {
         Cursor.lockState = CursorLockMode.Confined;
         GameManager.instance.isUIActivation = true;
+        AudioManager.instance.Play_UI_Button(0);
         ESC_menu.SetActive(true);
         option_menu.SetActive(false);
         Time.timeScale = 0;
@@ -115,14 +196,12 @@ public class ESCmenu : MonoBehaviour
         ESC_menu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameManager.instance.isUIActivation = false;
-        Debug.Log("계속하기");
         Time.timeScale = 1;
     }
     public void Option_Btn()
     {
         ESC_menu.SetActive(false);
         option_menu.SetActive(true);
-        Debug.Log("옵션");
         op_gamePlay.SetActive(true);
         op_sound.SetActive(false);
 
@@ -154,12 +233,10 @@ public class ESCmenu : MonoBehaviour
     {
         ESC_menu.SetActive(true);
         option_menu.SetActive(false);
-        Debug.Log("옵션 나가기");
     }
 
     public void ExitGame_Btn()
     {
-        Debug.Log("나가기");
         Time.timeScale = 1;
         SceneManager.LoadScene("LobbyScene");
     }
@@ -171,20 +248,18 @@ public class ESCmenu : MonoBehaviour
     public void SetResolution()
     {
         selectResolution = resolution_dropdown.value;
-        Debug.Log(selectResolution + " 변경");
     }
 
-    public void SetFullScreen(Toggle fullScreen)
+    public void SetFullScreen()
     {
-        this.fullScreen = fullScreen.isOn;
-        Debug.Log("fullScreen : " + this.fullScreen);
+        this.fullScreen = fullScreen_toggle.isOn;
         if (this.fullScreen)
         {
-            fullScreen.transform.GetChild(0).gameObject.SetActive(true);
+            fullScreen_toggle.transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
-            fullScreen.transform.GetChild(0).gameObject.SetActive(false);
+            fullScreen_toggle.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
@@ -193,10 +268,10 @@ public class ESCmenu : MonoBehaviour
     public void ChangeResolution_Btn()
     {
         //값에 따라 해상도를 프리팹에 저장하고
-        PlayerPrefs.SetInt("selectResolution", selectResolution);
+        PlayerPrefs.SetInt("selectResolution", selectResolution+1);
 
         //전체화면 여부도 저장하고
-        PlayerPrefs.SetInt("fullScreen", fullScreen ? 1 : 0);
+        PlayerPrefs.SetInt("fullScreen", fullScreen ? 1 : 2);
 
         //해상도를 변경한다
         ChangeResolution();
@@ -206,8 +281,6 @@ public class ESCmenu : MonoBehaviour
     public void ChangeResolution()
     {
         Screen.SetResolution(horizontal[PlayerPrefs.GetInt("selectResolution")], vertical[PlayerPrefs.GetInt("selectResolution")], fullScreen);
-        //resolutionText.text = horizontal[PlayerPrefs.GetInt("selectResolution")] + " x " + vertical[PlayerPrefs.GetInt("selectResolution")];
-        Debug.Log("적용되었습니다");
     }
 
     #endregion
@@ -236,22 +309,19 @@ public class ESCmenu : MonoBehaviour
         switch (type)
         {
             case 0:
-                Debug.Log("master : " + masterVolum);
                 mixer.SetFloat("master", masterVolum);
                 PlayerPrefs.SetFloat("masterVolum", masterVolum);
-                masterAudioText.text = "" + (int)((masterVolum+30) /30 * 100);
+                masterAudioText.text = "" + (int)((masterVolum+80) /80 * 100);
                 break;
             case 1:
-                Debug.Log("background : " + backgroundVolum);
                 mixer.SetFloat("background", backgroundVolum);
                 PlayerPrefs.SetFloat("backgroundVolum", backgroundVolum);
-                backgroundAudioText.text = "" + (int)(((backgroundVolum + 30) / 30 * 100));
+                backgroundAudioText.text = "" + (int)(((backgroundVolum + 80) / 80 * 100));
                 break;
             case 2:
-                Debug.Log("effect : " + effectVolum);
                 mixer.SetFloat("effect", effectVolum);
                 PlayerPrefs.SetFloat("effectVolum", effectVolum);
-                effextrAudioText.text = "" + (int)(((effectVolum + 30) / 30 * 100));
+                effextrAudioText.text = "" + (int)(((effectVolum + 80) / 80 * 100));
                 break;
         }
     }
@@ -260,36 +330,37 @@ public class ESCmenu : MonoBehaviour
 
 
     #region 그 외 설정
-    public void SetBloom(Toggle setBloom)
+    public void SetBloom()
     {
-        Debug.Log("setBloom : " + setBloom.isOn);
-        if (setBloom.isOn)
+        if (bloom_Toggle.isOn)
         {
-            //bloom_object.SetActive(true);
             GameManager.instance._bloom.active = true;
-            setBloom.transform.GetChild(0).gameObject.SetActive(true);
+            bloom_Toggle.transform.GetChild(0).gameObject.SetActive(true);
+            PlayerPrefs.SetInt("bloom", 2);
         }
         else
         {
-            //bloom_object.SetActive(false);
             GameManager.instance._bloom.active = false;
-            setBloom.transform.GetChild(0).gameObject.SetActive(false);
+            bloom_Toggle.transform.GetChild(0).gameObject.SetActive(false);
+            PlayerPrefs.SetInt("bloom", 1);
         }
     }
 
-    public void SetViewSize(Slider viewSize)
+    public void SetViewSize()
     {
         //60~90
-        Camera.main.fieldOfView = viewSize.value;
-        viewSize.transform.GetChild(3).GetComponent<Text>().text = "" + (int)viewSize.value;
+        Camera.main.fieldOfView = viewSizeSlider.value;
+        viewSizeSlider.transform.GetChild(3).GetComponent<Text>().text = "" + (int)viewSizeSlider.value;
+        PlayerPrefs.SetFloat("viewSize", viewSizeSlider.value);
 
     }
 
-    public void SetMouseSensitivity(Slider sensitivity)
+    public void SetMouseSensitivity()
     {
         //1~600
-        FindObjectOfType<CameraController>().mouseSensitivity = sensitivity.value;
-        sensitivity.transform.GetChild(3).GetComponent<Text>().text = "" + (int)sensitivity.value;
+        FindObjectOfType<CameraController>().mouseSensitivity = sensitivitySlider.value;
+        sensitivitySlider.transform.GetChild(3).GetComponent<Text>().text = "" + (int)sensitivitySlider.value;
+        PlayerPrefs.SetFloat("sensitivity", sensitivitySlider.value);
     }
 
 

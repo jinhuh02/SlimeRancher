@@ -45,6 +45,7 @@ public class Vacpack : MonoBehaviour
                 {
                     meshs[i].SetActive(true);
                 }
+                inventory.PlaySustainedAudio();
             }
 
             if (Input.GetMouseButtonUp(1))
@@ -55,6 +56,7 @@ public class Vacpack : MonoBehaviour
                 {
                     meshs[i].SetActive(false);
                 }
+                inventory.StopSustainedAudio();
             }
 
 
@@ -69,6 +71,7 @@ public class Vacpack : MonoBehaviour
                     selectInvenNum--;
                 }
                 inventory.ShowSelectUI(selectInvenNum);
+                AudioManager.instance.Play_InventoryChainge(true);
             }
             else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
             {
@@ -81,6 +84,7 @@ public class Vacpack : MonoBehaviour
                     selectInvenNum++;
                 }
                 inventory.ShowSelectUI(selectInvenNum);
+                AudioManager.instance.Play_InventoryChainge(false);
             }
         }
         

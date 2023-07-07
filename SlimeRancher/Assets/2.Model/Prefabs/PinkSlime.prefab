@@ -555,6 +555,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slime_animator: {fileID: 6568808471220555087}
   myPlort: {fileID: 4728502612257937049, guid: f8f0a09237e29ea43a8ecb85edaa1f1d, type: 3}
+  bounce:
+  - {fileID: 8300000, guid: bd67535d8d60a824e812d846c2691202, type: 3}
+  - {fileID: 8300000, guid: e0581bc431801374e99fdd8743d6393a, type: 3}
+  - {fileID: 8300000, guid: 9cc9e449cce2ddf47b1d1574a2b42cf5, type: 3}
+  - {fileID: 8300000, guid: 39337b5088ff66f4aa305165d0284be3, type: 3}
+  bite: {fileID: 8300000, guid: 4add97751322a0249a1e8cd8232a6026, type: 3}
+  plort: {fileID: 8300000, guid: 21191532207a23245a14670e20e31a77, type: 3}
+  slimevoice:
+  - {fileID: 8300000, guid: 5da771400998ce14b94cca59a8b6eea6, type: 3}
+  - {fileID: 8300000, guid: c2e2883e748df3744a883fce117cb199, type: 3}
+  - {fileID: 8300000, guid: 7334e507c96624240836a739ba7fdcc4, type: 3}
+  - {fileID: 8300000, guid: 05d8c28e8e271bf498cc1bbd61280290, type: 3}
+  - {fileID: 8300000, guid: ec9e550161f5353468a3f7a3fe471b6d, type: 3}
+  - {fileID: 8300000, guid: cbc094d60809a2e49b41476608303b4f, type: 3}
+  - {fileID: 8300000, guid: 2f0e4444d2e05b546963be208b21e199, type: 3}
+  - {fileID: 8300000, guid: 80ff028baf8db8347ba767280af7b835, type: 3}
+  - {fileID: 8300000, guid: 047de8df8019bb244a517d97425a4aae, type: 3}
+  - {fileID: 8300000, guid: e3bf58d4d658bb248b69db2ab3de1b62, type: 3}
+  thrown:
+  - {fileID: 8300000, guid: 5887d789020df3c41992789666383a51, type: 3}
+  - {fileID: 8300000, guid: 347d05559dd1dbf44ad9741387ff4fe7, type: 3}
+  - {fileID: 8300000, guid: ebbe8740b34e5e648bd166cc10757bd3, type: 3}
+  - {fileID: 8300000, guid: 942e3e01a38c24a469fbcb235d686961, type: 3}
+  splat:
+  - {fileID: 8300000, guid: ed59eb67e28261f4b93df946af820820, type: 3}
+  - {fileID: 8300000, guid: ed7667a1add32be458e9b89bf5623862, type: 3}
+  - {fileID: 8300000, guid: 6260ce7c8bfad7145bd3210ef198d4c9, type: 3}
 --- !u!114 &4822349539931310203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,7 +639,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 9110493636966290252, guid: 953c9c07f8273b44886814a869abf0f3, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -622,9 +649,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 90
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -657,7 +684,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
