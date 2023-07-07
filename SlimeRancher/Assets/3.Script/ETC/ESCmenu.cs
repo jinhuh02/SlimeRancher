@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using UnityEngine.Audio;
 
 public class ESCmenu : MonoBehaviour
 {
@@ -16,15 +17,30 @@ public class ESCmenu : MonoBehaviour
     [SerializeField] Dropdown resolution_dropdown;
     [SerializeField] GameObject bloom_object;
 
-    [Header("해상도")]
+    [Header("해상도 설정")]
     public int selectResolution = 9; //기본값
     public bool fullScreen = false; //기본값
     int[] horizontal = new int[13];
     int[] vertical = new int[13];
 
 
+    [Header("오디오 설정")]
+    [SerializeField] AudioMixer mixer;
+    [SerializeField] Slider masterAudioSlider;
+    [SerializeField] Slider backgroundAudioSlider;
+    [SerializeField] Slider effextrAudioSlider;
+    [SerializeField] Text masterAudioText;
+    [SerializeField] Text backgroundAudioText;
+    [SerializeField] Text effextrAudioText;
+    float masterVolum = 0;
+    float backgroundVolum = 0;
+    float effectVolum = 0;
+
+
     private void Start()
     {
+        #region 해상도 설정 저장
+
         horizontal[0] = 800;
         vertical[0] = 600;
 
@@ -65,7 +81,24 @@ public class ESCmenu : MonoBehaviour
         horizontal[12] = 1920;
         vertical[12] = 1080;
 
+        #endregion
 
+
+        masterVolum = PlayerPrefs.GetFloat("masterVolum");
+        backgroundVolum = PlayerPrefs.GetFloat("backgroundVolum");
+        effectVolum = PlayerPrefs.GetFloat("effectVolum");
+
+        masterAudioSlider.value = masterVolum;
+        backgroundAudioSlider.value = backgroundVolum;
+        effextrAudioSlider.value = effectVolum;
+
+        SetAudioVolum(0);
+        SetAudioVolum(1);
+        SetAudioVolum(2);
+
+        Debug.Log("masterVolum : " + masterVolum);
+        Debug.Log("backgroundVolum : " + backgroundVolum);
+        Debug.Log("effectVolum : " + effectVolum);
     }
 
     public void ShowESC_UI()
@@ -132,7 +165,6 @@ public class ESCmenu : MonoBehaviour
     }
 
 
-
     #region 해상도
 
 
@@ -183,6 +215,46 @@ public class ESCmenu : MonoBehaviour
 
     #region 소리
 
+    public void SetAudioMasterVolum(Slider slider)
+    {
+        masterVolum = slider.value;
+        SetAudioVolum(0);
+    }
+    public void SetAudioBackgroundVolum(Slider slider)
+    {
+        backgroundVolum = slider.value;
+        SetAudioVolum(1);
+    }
+    public void SetAudioEffextVolum(Slider slider)
+    {
+        effectVolum = slider.value;
+        SetAudioVolum(2);
+    }
+
+    private void SetAudioVolum(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                Debug.Log("master : " + masterVolum);
+                mixer.SetFloat("master", masterVolum);
+                PlayerPrefs.SetFloat("masterVolum", masterVolum);
+                masterAudioText.text = "" + (int)((masterVolum+30) /30 * 100);
+                break;
+            case 1:
+                Debug.Log("background : " + backgroundVolum);
+                mixer.SetFloat("background", backgroundVolum);
+                PlayerPrefs.SetFloat("backgroundVolum", backgroundVolum);
+                backgroundAudioText.text = "" + (int)(((backgroundVolum + 30) / 30 * 100));
+                break;
+            case 2:
+                Debug.Log("effect : " + effectVolum);
+                mixer.SetFloat("effect", effectVolum);
+                PlayerPrefs.SetFloat("effectVolum", effectVolum);
+                effextrAudioText.text = "" + (int)(((effectVolum + 30) / 30 * 100));
+                break;
+        }
+    }
 
     #endregion
 

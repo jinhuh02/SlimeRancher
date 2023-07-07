@@ -23,6 +23,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] List<AudioClip> backgroundClip = new List<AudioClip>();
     [SerializeField] List<AudioClip> effectClip = new List<AudioClip>();
 
+    private void Start()
+    {
+        PlayBackgroundAudio(0);
+    }
+
     public void PlayBackgroundAudio(int clipNum)
     {
         background_Audio.clip = backgroundClip[clipNum];
