@@ -8,7 +8,9 @@ public class Lobby : MonoBehaviour
 
     public void StartGame_Btn()
     {
-        SceneManager.LoadScene("SampleScene");
+        FindObjectOfType<Loading>().isLoading = true;
+        PlayerPrefs.SetString("SceneName", "SampleScene");
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void ExitGame_Btn()
