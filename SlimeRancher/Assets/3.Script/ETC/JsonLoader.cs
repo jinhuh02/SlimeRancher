@@ -13,8 +13,8 @@ public class SaveData
     public int hour;
     public int minute;
     public int coin;
-    public int slimeCount01;
-    public int slimeCount02;
+    public int[] slimeCount01 = new int[2];
+    public int[] slimeCount02 = new int[2];
     public int[] inventory_item = new int[4];
     public int[] inventory_count = new int[4];
 }
@@ -136,12 +136,12 @@ public class JsonLoader : MonoBehaviour
         }
     }
 
-    public bool isSaveLoad = false;
+    //public bool isSaveLoad = false;
     public int selectFileNum = 0; //선택된 게임파일
     //만약 세이브 로드일때
     private void OnLevelWasLoaded(int level)
     {
-        if (isSaveLoad && SceneManager.GetActiveScene().name == "SampleScene")
+        if (saveData.Count>selectFileNum && SceneManager.GetActiveScene().name == "SampleScene")
         {
             //저장된 기록 불러오기
 
@@ -150,7 +150,7 @@ public class JsonLoader : MonoBehaviour
                 saveData[selectFileNum].slimeCount01, saveData[selectFileNum].slimeCount02, 
                 saveData[selectFileNum].inventory_item, saveData[selectFileNum].inventory_count);
 
-            isSaveLoad = false;
+            //isSaveLoad = false;
         }
     }
 

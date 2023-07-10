@@ -6219,7 +6219,7 @@ GameObject:
   - component: {fileID: 489664678}
   - component: {fileID: 489664677}
   m_Layer: 0
-  m_Name: Coll
+  m_Name: CollB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6251,6 +6251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ec55990b73dba469ac4b502cf18dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inSlimeCount: 0000000000000000
 --- !u!65 &489664678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12507,6 +12508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b023b4c3346a117409fc29efcf50b93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slimeBox01: {fileID: 1227027859}
+  slimeBox02: {fileID: 489664675}
+  pinkSlime: {fileID: 6334437471281470227, guid: a03af7b9ac8322145a2560492e0ae4be, type: 3}
+  tabbySlime: {fileID: 6334437471281470227, guid: 27225a6a7b4c3454885d725e07c40cd7, type: 3}
 --- !u!4 &863989796
 Transform:
   m_ObjectHideFlags: 0
@@ -16573,7 +16578,7 @@ GameObject:
   - component: {fileID: 1227027861}
   - component: {fileID: 1227027862}
   m_Layer: 0
-  m_Name: Coll
+  m_Name: CollA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16618,6 +16623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ec55990b73dba469ac4b502cf18dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inSlimeCount: 0000000000000000
 --- !u!1 &1229502182
 GameObject:
   m_ObjectHideFlags: 0
