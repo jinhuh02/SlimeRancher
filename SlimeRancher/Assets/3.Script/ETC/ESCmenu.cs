@@ -193,14 +193,12 @@ public class ESCmenu : MonoBehaviour
 
     public void Continue_Btn()
     {
-        ESC_menu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameManager.instance.isUIActivation = false;
         Time.timeScale = 1;
     }
     public void Option_Btn()
     {
-        ESC_menu.SetActive(false);
         option_menu.SetActive(true);
         op_gamePlay.SetActive(true);
         op_sound.SetActive(false);
@@ -229,11 +227,6 @@ public class ESCmenu : MonoBehaviour
         sound_btn.GetComponent<Image>().color = new Color(0.9490196f, 0.8941177f, 0f);
     }
 
-    public void OptionExit_Btn()
-    {
-        ESC_menu.SetActive(true);
-        option_menu.SetActive(false);
-    }
 
     public void ExitGame_Btn()
     {

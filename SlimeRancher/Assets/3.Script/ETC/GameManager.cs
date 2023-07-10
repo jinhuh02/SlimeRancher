@@ -26,8 +26,11 @@ public class GameManager : MonoBehaviour
     public int myCoin = 0;
 
     //hp와 체력 관리하기
-    public int myHP = 100;
+    [SerializeField] PlayerController playerController;
+    //public int myHP = 100; //사용하지않을거임
     public int myMP = 100;
+    [SerializeField] Slider mp_Slider;
+    [SerializeField] Text mp_Text;
 
     //시간 및 날짜 관리
     public float currentTimeHour = 9;
@@ -51,6 +54,8 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(TimeCheck_co());
         ComputeCoinValue(0);
+
+        playerController = FindObjectOfType<PlayerController>();
 
         Time.timeScale = 1;
 
@@ -158,5 +163,67 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    public void StartSpeedUp()
+    {
+        StopAllCoroutines();
+        playerController.speed = 40;
+        StartCoroutine(SpeedUpTimeCheck_co());
+    }
+
+    public void StopSpeedUp()
+    {
+        playerController.speed = 20;
+        playerController.isShift = false;
+        StartCoroutine(MPRecovery_co());
+    }
+
+    public bool isSpeedUp = false;
+
+    IEnumerator SpeedUpTimeCheck_co()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.07f);
+
+            if (myMP <= 0)
+            {
+                myMP = 0;
+                mp_Text.text = myMP.ToString();
+                mp_Slider.value = myMP;
+                StopSpeedUp();
+                yield break;
+            }
+            else if (!isSpeedUp)
+            {
+                mp_Text.text = myMP.ToString();
+                mp_Slider.value = myMP;
+                StopSpeedUp();
+                yield break;
+            }
+
+            myMP--;
+            mp_Text.text = myMP.ToString();
+            mp_Slider.value = myMP;
+        }
+    }
+
+    IEnumerator MPRecovery_co()
+    {
+        yield return new WaitForSeconds(2);
+        while (true)
+        {
+            yield return new WaitForSeconds(0.05f);
+            myMP++;
+            mp_Text.text = myMP.ToString();
+            mp_Slider.value = myMP;
+            if (myMP >= 100)
+            {
+                myMP = 100;
+                mp_Text.text = myMP.ToString();
+                mp_Slider.value = myMP;
+                yield break;
+            }
+        }
+    }
 
 }

@@ -9,7 +9,6 @@ public class Market : MonoBehaviour
     [SerializeField] AudioClip[] plortDeposit = new AudioClip[21]; //플로트 판매
 
     int sountCount=0;
-    bool isInOneSecond = false;
 
     private void Start()
     {
@@ -22,17 +21,25 @@ public class Market : MonoBehaviour
         if (collision.transform.CompareTag("Item"))
         {
             Debug.Log("1개 접수! 코인증가!");
-            Destroy(collision.gameObject);
-            GameManager.instance.ComputeCoinValue(100);
 
-            //1초 이내에 또 판매해야 소리가 올라감
-            UpsoundCount();
+            if(collision.transform.GetComponent<Item>().itemName.Equals("분홍색 플로트"))
+            {
+                GameManager.instance.ComputeCoinValue(9);
+            }
+            else if (collision.transform.GetComponent<Item>().itemName.Equals("냥이 플로트"))
+            {
+                GameManager.instance.ComputeCoinValue(22);
+            }
+
+            Destroy(collision.gameObject);
+            
+            UpsoundCount(); 
             audioSource.clip = plortDeposit[sountCount];
             audioSource.Play();
         }
     }
 
-    private void UpsoundCount()
+    private void UpsoundCount() //1초 이내에 또 판매해야 소리가 올라감
     {
         StopAllCoroutines();
         sountCount++;

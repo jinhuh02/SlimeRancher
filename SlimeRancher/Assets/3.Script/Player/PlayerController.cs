@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CharacterController characterController;
     //[SerializeField] Animator animator;
 
-    float speed = 20;
+    public float speed = 20;
     float gravity = -20f;
     float jumpHeight = 3f;
 
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     bool isGround = true;
     bool isJump = false;
-    bool isShift = false;
+    public bool isShift = false;
     bool isFootprint = false;
     //bool isForward = false;
     //bool isBackward = false;
@@ -82,15 +82,25 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if (isShift && Input.GetKeyDown(KeyCode.LeftShift))
+            if (!isShift && Input.GetKeyDown(KeyCode.LeftShift))
             {
-                speed = 20;
-                isShift = false;
+                isShift = true;
+                Debug.Log("달리기!");
+                GameManager.instance.isSpeedUp = true;
+                GameManager.instance.StartSpeedUp();
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                isShift = true;
-                speed = 40;
+                isShift = false;
+                Debug.Log("달리지않음!");
+                GameManager.instance.isSpeedUp = false;
+                GameManager.instance.StopSpeedUp();
+            }
+            else if (isShift && x == 0 && z == 0)
+            {
+                isShift = false;
+                GameManager.instance.isSpeedUp = false;
+                GameManager.instance.StopSpeedUp();
             }
 
             velocity.y += gravity * Time.deltaTime;
