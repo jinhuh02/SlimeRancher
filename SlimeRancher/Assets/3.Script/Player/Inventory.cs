@@ -218,7 +218,15 @@ public class Inventory : MonoBehaviour
 
         objBox[bagNum, itemCount[bagNum] - 1].transform.position = transform.position + (transform.rotation * new Vector3(0.1f, 0, 1) * 3);
         objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().velocity = Vector3.zero;
-        objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().AddForce(transform.rotation * Vector3.forward * 2500, ForceMode.Force);
+        if(objBox[bagNum, itemCount[bagNum] - 1].CompareTag("Food"))
+        {
+            objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().AddForce(transform.rotation * Vector3.forward * 1000, ForceMode.Force);
+        }
+        else
+        {
+            objBox[bagNum, itemCount[bagNum] - 1].GetComponent<Rigidbody>().AddForce(transform.rotation * Vector3.forward * 2500, ForceMode.Force);
+        }
+        
         itemCount[bagNum]--;
 
         audioSource.clip = shoot;

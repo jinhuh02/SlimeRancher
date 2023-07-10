@@ -5,7 +5,7 @@ using UnityEngine;
 public class Suck : MonoBehaviour
 {
     [SerializeField] GameObject vacpack;
-    float pullforce = 200; //speed
+    float pullforce = 250; //speed
     float refeshRate = 0.3f;
 
     Queue<Item> selectFalse = new Queue<Item>();
