@@ -80,17 +80,17 @@ public class JsonLoader : MonoBehaviour
     public void SaveAndExitGame()
     {
         //현재 진행상황을 가져온다
-        if(saveData.Count > 0)
+        if (saveData.Count > selectFileNum)
         {
             saveData[selectFileNum] = FindObjectOfType<CurrentProgress>().UpdateSaveFileData();
         }
         else
         {
-            //현재 진행상황을 가져와서 저장
+            //현재 진행상황을 가져와서 새로운 파일로 저장
             saveData.Add(FindObjectOfType<CurrentProgress>().UpdateSaveFileData());
         }
 
-        Debug.Log("저장할 진행상황 : " + saveData);
+        Debug.Log("이렇게 업데이트 하겠습니다 : " + saveData);
 
         File_Update();
     }
@@ -124,6 +124,17 @@ public class JsonLoader : MonoBehaviour
         return jsonData;
     }
 
+
+    public void RemoveSaveFile()
+    {
+        if(saveData.Count > selectFileNum)
+        {
+            saveData.RemoveAt(selectFileNum);
+            Debug.Log("기록삭제하고 남은거 : " + saveData);
+            //다시 로드
+            FindObjectOfType<Lobby>().UpdateUIText();
+        }
+    }
 
     public bool isSaveLoad = false;
     public int selectFileNum = 0; //선택된 게임파일

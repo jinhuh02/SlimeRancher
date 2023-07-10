@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -209,7 +210,15 @@ public class Inventory : MonoBehaviour
             return;
         }
 
+        try
+        {
         objBox[bagNum, itemCount[bagNum]-1].SetActive(true);
+
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex);
+        }
 
         if(objBox[bagNum, itemCount[bagNum] - 1].CompareTag("Slime"))
         {

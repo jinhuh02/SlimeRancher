@@ -52,13 +52,57 @@ public class GameManager : MonoBehaviour
         _postProcessVolume.profile.TryGet(out _colorAdjustments);
         _postProcessVolume.profile.TryGet(out _bloom);
 
-        StartCoroutine(TimeCheck_co());
-        ComputeCoinValue(0);
-
         playerController = FindObjectOfType<PlayerController>();
 
         Time.timeScale = 1;
 
+        StartCoroutine(GameStartDelay_co());
+    }
+
+    IEnumerator GameStartDelay_co()
+    {
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+
+
+        //시간 텍스트 업데이트
+        Time_Days.text = currentDays + "일 째";
+        if (currentTimeHour < 10)
+        {
+            if (currentTimeMinute < 10)
+            {
+                Time_text.text = "0" + currentTimeHour + ":0" + currentTimeMinute;
+            }
+            else
+            {
+                Time_text.text = "0" + currentTimeHour + ":" + currentTimeMinute;
+            }
+        }
+        else
+        {
+            if (currentTimeMinute < 10)
+            {
+                Time_text.text = currentTimeHour + ":0" + currentTimeMinute;
+            }
+            else
+            {
+                Time_text.text = currentTimeHour + ":" + currentTimeMinute;
+            }
+        }
+
+        //밤 시간일 경우 어둡게
+        if(currentTimeHour >=18 || currentTimeHour < 4)
+        {
+            _colorAdjustments.postExposure.value = -3.5f;
+        }
+
+
+        StartCoroutine(TimeCheck_co());
+        ComputeCoinValue(0);
     }
 
 
@@ -165,7 +209,8 @@ public class GameManager : MonoBehaviour
 
     public void StartSpeedUp()
     {
-        StopAllCoroutines();
+        StopCoroutine(SpeedUpTimeCheck_co());
+        StopCoroutine(MPRecovery_co());
         playerController.speed = 40;
         StartCoroutine(SpeedUpTimeCheck_co());
     }

@@ -33,6 +33,7 @@ public class CurrentProgress : MonoBehaviour
     IEnumerator UpdateSceneData()
     {
         yield return null;
+        yield return null;
         GameManager.instance.currentDays = days;
         GameManager.instance.currentTimeHour = hour;
         GameManager.instance.currentTimeMinute = minute;
