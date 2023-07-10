@@ -134,7 +134,7 @@ public class Slime : MonoBehaviour
                 return;
             }
             //먹이에 다가간 후 먹는 애니메이션 진행
-            Debug.Log("먹이다!");
+            //Debug.Log("먹이다!");
             collision.transform.GetComponent<Food>().isAlreadyChosen = true;
             isFoodTarget = true;
             targetFood_obj = collision.gameObject;
@@ -147,7 +147,7 @@ public class Slime : MonoBehaviour
         else if(collision.transform.CompareTag("Food") && isFoodTarget && step==1)
         {
             isFoodTarget = false;
-            Debug.Log("먹어볼게");
+            //Debug.Log("먹어볼게");
             step = 2;
             StartCoroutine(Bite_co(collision.gameObject));
             return;
@@ -162,7 +162,7 @@ public class Slime : MonoBehaviour
 
     IEnumerator Bite_co(GameObject food)
     {
-        Debug.Log("먹었다");
+        //Debug.Log("먹었다");
         slime_animator.SetTrigger("bite");
         yield return new WaitForSeconds(2.5f);
         Destroy(food);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
+
     BoxCollider myCollider;
 
     private void Start()
@@ -15,10 +16,7 @@ public class Barrier : MonoBehaviour
     {
         if (other.CompareTag("Slime") && other.gameObject.layer == 0)
         {
-            //Debug.Log("나가지마");
-            //other.GetComponent<Rigidbody>().velocity = -other.GetComponent<Rigidbody>().velocity * 0.9f;
             other.gameObject.layer = 7;
-
         }
     }
 
@@ -26,10 +24,7 @@ public class Barrier : MonoBehaviour
     {
         if (other.CompareTag("Slime") && other.gameObject.layer == 0)
         {
-            //Debug.Log("나가지마");
-            //other.GetComponent<Rigidbody>().velocity = -other.GetComponent<Rigidbody>().velocity * 0.9f;
             other.gameObject.layer = 7;
-
         }
     }
 

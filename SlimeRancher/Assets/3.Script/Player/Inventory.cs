@@ -197,7 +197,7 @@ public class Inventory : MonoBehaviour
     {
         if (itemCount[bagNum] <= 0)
         {
-            Debug.Log("수납된 아이템이 없습니다");
+            //Debug.Log("수납된 아이템이 없습니다");
             UnselectedUI[bagNum].SetActive(true);
             icon_UI[bagNum].gameObject.SetActive(false);
             name_UI[bagNum].text = string.Empty;

@@ -231,6 +231,7 @@ public class ESCmenu : MonoBehaviour
     public void ExitGame_Btn()
     {
         Time.timeScale = 1;
+        FindObjectOfType<JsonLoader>().SaveAndExitGame();
         FindObjectOfType<Loading>().isLoading = true;
         PlayerPrefs.SetString("SceneName", "LobbyScene");
         SceneManager.LoadScene("LoadingScene");

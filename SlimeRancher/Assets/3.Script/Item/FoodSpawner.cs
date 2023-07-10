@@ -29,7 +29,7 @@ public class FoodSpawner : MonoBehaviour
 
     IEnumerator CreationFood_co()
     {
-        Debug.Log("농작물을 다시 생성합니다");
+        //Debug.Log("농작물을 다시 생성합니다");
 
         yield return new WaitForSeconds(1);
         for(int i=0; i<food_pos.Count; i++)
@@ -73,7 +73,7 @@ public class FoodSpawner : MonoBehaviour
         }
 
         //undergrownFood.Clear();
-        Debug.Log("농작물을 수확할 수 있습니다");
+        //Debug.Log("농작물을 수확할 수 있습니다");
     }
 
 }

@@ -20,7 +20,7 @@ public class Market : MonoBehaviour
     {
         if (collision.transform.CompareTag("Item"))
         {
-            Debug.Log("1개 접수! 코인증가!");
+            //Debug.Log("1개 접수! 코인증가!");
 
             if(collision.transform.GetComponent<Item>().itemName.Equals("분홍색 플로트"))
             {

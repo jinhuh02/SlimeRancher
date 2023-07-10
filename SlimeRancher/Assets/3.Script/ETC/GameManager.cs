@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     //시간 및 날짜 관리
     public float currentTimeHour = 9;
-    public float currentTimeSecond = 0;
+    public float currentTimeMinute = 0;
     public int currentDays = 1;
     public bool isnight = false;
 
@@ -76,11 +76,11 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
-            currentTimeSecond++;
+            currentTimeMinute++;
 
-            if(currentTimeSecond == 60)
+            if(currentTimeMinute == 60)
             {
-                currentTimeSecond = 0;
+                currentTimeMinute = 0;
                 currentTimeHour++;
 
                 switch (currentTimeHour)
@@ -105,24 +105,24 @@ public class GameManager : MonoBehaviour
 
             if(currentTimeHour < 10)
             {
-                if (currentTimeSecond < 10)
+                if (currentTimeMinute < 10)
                 {
-                    Time_text.text = "0" + currentTimeHour + ":0" + currentTimeSecond;
+                    Time_text.text = "0" + currentTimeHour + ":0" + currentTimeMinute;
                 }
                 else
                 {
-                    Time_text.text = "0" + currentTimeHour + ":" + currentTimeSecond;
+                    Time_text.text = "0" + currentTimeHour + ":" + currentTimeMinute;
                 }
             }
             else
             {
-                if (currentTimeSecond < 10)
+                if (currentTimeMinute < 10)
                 {
-                    Time_text.text = currentTimeHour + ":0" + currentTimeSecond;
+                    Time_text.text = currentTimeHour + ":0" + currentTimeMinute;
                 }
                 else
                 {
-                    Time_text.text = currentTimeHour + ":" + currentTimeSecond;
+                    Time_text.text = currentTimeHour + ":" + currentTimeMinute;
                 }
             }
             

@@ -85,14 +85,14 @@ public class PlayerController : MonoBehaviour
             if (!isShift && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 isShift = true;
-                Debug.Log("달리기!");
+                //Debug.Log("달리기!");
                 GameManager.instance.isSpeedUp = true;
                 GameManager.instance.StartSpeedUp();
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 isShift = false;
-                Debug.Log("달리지않음!");
+                //Debug.Log("달리지않음!");
                 GameManager.instance.isSpeedUp = false;
                 GameManager.instance.StopSpeedUp();
             }
