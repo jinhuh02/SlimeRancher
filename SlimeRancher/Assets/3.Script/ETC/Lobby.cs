@@ -170,6 +170,7 @@ public class Lobby : MonoBehaviour
             case 3:
                 //µ¤¾î¾º¿ö¾ßÇÔ
                 jsonLoader.is4thFile = true;
+                jsonLoader.selectFileNum = 3;
                 break;
         }
         FindObjectOfType<Loading>().isLoading = true;
