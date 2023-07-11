@@ -53,9 +53,9 @@ public class CurrentProgress : MonoBehaviour
     {
         yield return null;
         yield return null;
-        GameManager.instance.currentDays = days;
-        GameManager.instance.currentTimeHour = hour;
-        GameManager.instance.currentTimeMinute = minute;
+        TimeManager.instance.currentDays = days;
+        TimeManager.instance.currentTimeHour = hour;
+        TimeManager.instance.currentTimeMinute = minute;
         GameManager.instance.myCoin = coin;
 
         for(int i=0; i<4; i++)
@@ -184,9 +184,9 @@ public class CurrentProgress : MonoBehaviour
     {
         SaveData saveData = new SaveData();
 
-        saveData.days = GameManager.instance.currentDays;
-        saveData.hour = (int)GameManager.instance.currentTimeHour;
-        saveData.minute = (int)GameManager.instance.currentTimeMinute;
+        saveData.days = TimeManager.instance.currentDays;
+        saveData.hour = (int)TimeManager.instance.currentTimeHour;
+        saveData.minute = (int)TimeManager.instance.currentTimeMinute;
         saveData.coin = GameManager.instance.myCoin;
         saveData.slimeCount01 = slimeBox01.GetComponent<Barrier>().inSlimeCount;
         saveData.slimeCount02 = slimeBox02.GetComponent<Barrier>().inSlimeCount;

@@ -5,12 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
+
+    #region instance
+    public static Loading instance = null;
+
+    private void Awake()
+    {
+        if (instance)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    #endregion
+
     public bool isLoading = false;
     private float time;
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
         PlayerPrefs.SetString("SceneName", "LobbyScene");
         StartCoroutine(LoadAsynScene_co());
     }

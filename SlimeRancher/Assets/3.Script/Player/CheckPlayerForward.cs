@@ -84,6 +84,6 @@ public class CheckPlayerForward : MonoBehaviour
         }
         
 
-        Debug.DrawRay(transform.position, transform.forward * 20f, Color.red);
+        //Debug.DrawRay(transform.position, transform.forward * 20f, Color.red);
     }
 }

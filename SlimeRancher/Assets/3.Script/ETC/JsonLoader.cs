@@ -51,6 +51,8 @@ public class JsonLoader : MonoBehaviour
     public SaveFile savfiles = new SaveFile();
     public List<SaveData> saveData = new List<SaveData>();
 
+    //새로 만든 파일이 4번째 파일일 경우 - 파일 초과! 덮어씌워야함
+    public bool is4thFile = false;
 
     private void Awake()
     {
@@ -97,9 +99,10 @@ public class JsonLoader : MonoBehaviour
     public void SaveAndExitGame()
     {
         //현재 진행상황을 가져온다
-        if (saveData.Count > selectFileNum)
+        if (is4thFile || saveData.Count > selectFileNum)
         {
             saveData[selectFileNum] = FindObjectOfType<CurrentProgress>().UpdateSaveFileData();
+            is4thFile = false;
         }
         else
         {
@@ -169,11 +172,14 @@ public class JsonLoader : MonoBehaviour
                 saveData[selectFileNum].isClearSlimeBarrier, saveData[selectFileNum].isClearExpansionBarrier);
 
             //isSaveLoad = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         else if(SceneManager.GetActiveScene().name == "LoadingScene")
         {
             saveData.Clear();
+            Cursor.lockState = CursorLockMode.Confined;
 
             if (File.Exists(path))
             {
@@ -196,5 +202,6 @@ public class JsonLoader : MonoBehaviour
 
         }
     }
+
 
 }

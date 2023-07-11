@@ -15,6 +15,7 @@ public class ESCmenu : MonoBehaviour
     [SerializeField] GameObject op_sound;
     [SerializeField] Button gamePlay_btn;
     [SerializeField] Button sound_btn;
+    [SerializeField] GameObject overwrite_menu;
 
     [Header("[해상도 설정]")]
     [SerializeField] Dropdown resolution_dropdown;
@@ -47,6 +48,11 @@ public class ESCmenu : MonoBehaviour
     float backgroundVolum = 0;
     float effectVolum = 0;
 
+    [SerializeField] Text[] daysText = new Text[3];
+    [SerializeField] Text[] timeText = new Text[3];
+    [SerializeField] Text[] coinText = new Text[3];
+
+    JsonLoader jsonLoader;
 
     private void Start()
     {
@@ -107,6 +113,8 @@ public class ESCmenu : MonoBehaviour
         SetAudioVolum(2);
 
         StartCoroutine(PlayerSetting_co());
+
+        jsonLoader = FindObjectOfType<JsonLoader>();
     }
 
     IEnumerator PlayerSetting_co()
@@ -227,6 +235,132 @@ public class ESCmenu : MonoBehaviour
         sound_btn.GetComponent<Image>().color = new Color(0.9490196f, 0.8941177f, 0f);
     }
 
+
+    public void Is4thFileCheck()
+    {
+        if (jsonLoader.is4thFile)
+        {
+            //덮어씌울 파일을 선택하는 UI
+            overwrite_menu.SetActive(true);
+
+            //UI의 내용을 채운다
+            if (jsonLoader.saveData.Count > 0)
+            {
+                //저장된 기록 있음
+                daysText[0].text = jsonLoader.saveData[0].days + "일 째";
+                if (jsonLoader.saveData[0].hour > 9)
+                {
+                    if (jsonLoader.saveData[0].minute > 9)
+                    {
+                        timeText[0].text = jsonLoader.saveData[0].hour + ":" + jsonLoader.saveData[0].minute;
+                    }
+                    else
+                    {
+                        timeText[0].text = jsonLoader.saveData[0].hour + ":0" + jsonLoader.saveData[0].minute;
+                    }
+                }
+                else
+                {
+                    if (jsonLoader.saveData[0].minute > 9)
+                    {
+                        timeText[0].text = "0" + jsonLoader.saveData[0].hour + ":" + jsonLoader.saveData[0].minute;
+                    }
+                    else
+                    {
+                        timeText[0].text = "0" + jsonLoader.saveData[0].hour + ":0" + jsonLoader.saveData[0].minute;
+                    }
+                }
+                coinText[0].text = jsonLoader.saveData[0].coin.ToString();
+
+            }
+            else
+            {
+                //저장된 기록 없음
+                daysText[0].text = "새 기록 쓰기";
+                timeText[0].text = string.Empty;
+                coinText[0].text = "0";
+            }
+
+            if (jsonLoader.saveData.Count > 1)
+            {
+                daysText[1].text = jsonLoader.saveData[1].days + "일 째";
+                if (jsonLoader.saveData[1].hour > 9)
+                {
+                    if (jsonLoader.saveData[1].minute > 9)
+                    {
+                        timeText[1].text = jsonLoader.saveData[1].hour + ":" + jsonLoader.saveData[1].minute;
+                    }
+                    else
+                    {
+                        timeText[1].text = jsonLoader.saveData[1].hour + ":0" + jsonLoader.saveData[1].minute;
+                    }
+                }
+                else
+                {
+                    if (jsonLoader.saveData[1].minute > 9)
+                    {
+                        timeText[1].text = "0" + jsonLoader.saveData[1].hour + ":" + jsonLoader.saveData[1].minute;
+                    }
+                    else
+                    {
+                        timeText[1].text = "0" + jsonLoader.saveData[1].hour + ":0" + jsonLoader.saveData[1].minute;
+                    }
+                }
+                coinText[1].text = jsonLoader.saveData[1].coin.ToString();
+            }
+            else
+            {
+                daysText[1].text = "새 기록 쓰기";
+                timeText[1].text = string.Empty;
+                coinText[1].text = "0";
+            }
+
+            if (jsonLoader.saveData.Count > 2)
+            {
+                daysText[2].text = jsonLoader.saveData[2].days + "일 째";
+                if (jsonLoader.saveData[2].hour > 9)
+                {
+                    if (jsonLoader.saveData[2].minute > 9)
+                    {
+                        timeText[2].text = jsonLoader.saveData[2].hour + ":" + jsonLoader.saveData[2].minute;
+                    }
+                    else
+                    {
+                        timeText[2].text = jsonLoader.saveData[2].hour + ":0" + jsonLoader.saveData[2].minute;
+                    }
+                }
+                else
+                {
+                    if (jsonLoader.saveData[2].minute > 9)
+                    {
+                        timeText[2].text = "0" + jsonLoader.saveData[2].hour + ":" + jsonLoader.saveData[2].minute;
+                    }
+                    else
+                    {
+                        timeText[2].text = "0" + jsonLoader.saveData[2].hour + ":0" + jsonLoader.saveData[2].minute;
+                    }
+                }
+                coinText[2].text = jsonLoader.saveData[2].coin.ToString();
+            }
+            else
+            {
+                daysText[2].text = "새 기록 쓰기";
+                timeText[2].text = string.Empty;
+                coinText[2].text = "0";
+            }
+
+
+        }
+        else
+        {
+            ExitGame_Btn();
+        }
+    }
+
+    public void SelectOverwriteFile(int num)
+    {
+        FindObjectOfType<JsonLoader>().selectFileNum = num;
+    }
 
     public void ExitGame_Btn()
     {

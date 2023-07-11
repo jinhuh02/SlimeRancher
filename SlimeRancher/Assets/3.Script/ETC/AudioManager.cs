@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
     {
         while (true)
         {
-            switch (GameManager.instance.isnight)
+            switch (TimeManager.instance.isnight)
             {
                 case true:
                     background_Audio.clip = backgroundClip[0]; //musicRanchTheme

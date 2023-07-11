@@ -10,6 +10,8 @@ public class Market : MonoBehaviour
 
     int sountCount=0;
 
+
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();

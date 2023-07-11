@@ -146,8 +146,32 @@ public class Lobby : MonoBehaviour
         }
     }
 
+
     public void StartGame_Btn()
     {
+        FindObjectOfType<Loading>().isLoading = true;
+        PlayerPrefs.SetString("SceneName", "SampleScene");
+        SceneManager.LoadScene("LoadingScene");
+    }
+
+    public void StartNewGame_Btn()
+    {
+        switch (jsonLoader.saveData.Count)
+        {
+            case 0:
+                jsonLoader.selectFileNum = 0;
+                break;
+            case 1:
+                jsonLoader.selectFileNum = 1;
+                break;
+            case 2:
+                jsonLoader.selectFileNum = 2;
+                break;
+            case 3:
+                //µ¤¾î¾º¿ö¾ßÇÔ
+                jsonLoader.is4thFile = true;
+                break;
+        }
         FindObjectOfType<Loading>().isLoading = true;
         PlayerPrefs.SetString("SceneName", "SampleScene");
         SceneManager.LoadScene("LoadingScene");
