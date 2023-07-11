@@ -6,10 +6,10 @@ public class Unlock : MonoBehaviour
 {
 
 
-    [SerializeField] GameObject my_barrier;
+    public GameObject my_barrier;
     [SerializeField] GameObject unlock_UI;
 
-    bool isLock =true;
+    public bool isLock =true;
 
     //가진 코인의 수가 250을 넘는다면 
     //코인 빼앗고 배리어 비활성화
@@ -22,6 +22,9 @@ public class Unlock : MonoBehaviour
             AudioManager.instance.Play_RanchBuild();
             my_barrier.SetActive(false);
             isLock = false;
+
+            FindObjectOfType<CurrentProgress>().isClearExpansionBarrier = true;
+
             this.enabled = false;
         }
     }

@@ -10,6 +10,8 @@ public class Food : MonoBehaviour
 
     public FoodSpawner myFoodSpawner;
 
+    public bool isSaveLoadFood = false;
+
     private void OnTriggerExit(Collider other)
     {
         if (!isHarvested && other.GetComponent<FoodSpawner>())
@@ -21,7 +23,7 @@ public class Food : MonoBehaviour
 
     private void OnDisable()
     {
-        if (!isHarvested)
+        if (!isSaveLoadFood && !isHarvested)
         {
             myFoodSpawner.SpawnCountUp();
             isHarvested = true;

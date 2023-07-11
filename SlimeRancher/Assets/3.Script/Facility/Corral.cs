@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Corral : MonoBehaviour
 {
-    [SerializeField] List<GameObject> barrier = new List<GameObject>();
+    public List<GameObject> barrier = new List<GameObject>();
 
     public bool isLock = true;
 
@@ -42,6 +42,9 @@ public class Corral : MonoBehaviour
                 barrier[i].SetActive(true);
             }
             isLock = false;
+
+            FindObjectOfType<CurrentProgress>().isClearSlimeBarrier = true;
+
             this.enabled = false;
         }
     }

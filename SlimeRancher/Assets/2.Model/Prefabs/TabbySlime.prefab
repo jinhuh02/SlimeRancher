@@ -555,6 +555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slime_animator: {fileID: 6568808471220555087}
   myPlort: {fileID: 5196883303282724272, guid: 87a9cf7f40b23014aab491aec354524a, type: 3}
+  myBarrier: {fileID: 0}
+  isSaveLoadSlime: 0
   bounce:
   - {fileID: 8300000, guid: bd67535d8d60a824e812d846c2691202, type: 3}
   - {fileID: 8300000, guid: e0581bc431801374e99fdd8743d6393a, type: 3}
@@ -648,7 +650,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 20
   MaxDistance: 110
   Pan2D: 0
   rolloffMode: 1

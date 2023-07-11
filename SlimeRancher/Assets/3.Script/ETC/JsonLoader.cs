@@ -15,8 +15,10 @@ public class SaveData
     public int coin;
     public int[] slimeCount01 = new int[2];
     public int[] slimeCount02 = new int[2];
-    public int[] inventory_item = new int[4];
-    public int[] inventory_count = new int[4];
+    public int[] inventory_item = new int[6];
+    public int[] inventory_count = new int[6];
+    public bool isClearSlimeBarrier = false;
+    public bool isClearExpansionBarrier = false;
 }
 
 public class SaveFile
@@ -163,9 +165,35 @@ public class JsonLoader : MonoBehaviour
             FindObjectOfType<CurrentProgress>().LoadSaveData(
                 saveData[selectFileNum].days, saveData[selectFileNum].hour, saveData[selectFileNum].minute, saveData[selectFileNum].coin, 
                 saveData[selectFileNum].slimeCount01, saveData[selectFileNum].slimeCount02, 
-                saveData[selectFileNum].inventory_item, saveData[selectFileNum].inventory_count);
+                saveData[selectFileNum].inventory_item, saveData[selectFileNum].inventory_count,
+                saveData[selectFileNum].isClearSlimeBarrier, saveData[selectFileNum].isClearExpansionBarrier);
 
             //isSaveLoad = false;
+        }
+
+        else if(SceneManager.GetActiveScene().name == "LoadingScene")
+        {
+            saveData.Clear();
+
+            if (File.Exists(path))
+            {
+
+                Debug.Log("저장된 기록이 존재합니다");
+
+                //배열로 담고 리스트로 변환
+                savfiles = JsonUtility.FromJson<SaveFile>(File_Read());
+
+                for (int i = 0; i < savfiles.saveDatas.Length; i++)
+                {
+                    saveData.Add(savfiles.saveDatas[i]); //saveData 리스트에 1~3개의 데이터가 쌓임
+                }
+
+            }
+            else
+            {
+                Debug.Log("기록이 존재하지 않습니다");
+            }
+
         }
     }
 

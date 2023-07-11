@@ -24,11 +24,11 @@ public class Market : MonoBehaviour
 
             if(collision.transform.GetComponent<Item>().itemName.Equals("분홍색 플로트"))
             {
-                GameManager.instance.ComputeCoinValue(9);
+                GameManager.instance.ComputeCoinValue(12);
             }
             else if (collision.transform.GetComponent<Item>().itemName.Equals("냥이 플로트"))
             {
-                GameManager.instance.ComputeCoinValue(22);
+                GameManager.instance.ComputeCoinValue(37);
             }
 
             Destroy(collision.gameObject);
