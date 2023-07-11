@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: f4c7d2112674bd149bafd82ed54251c4, type: 3}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.19076458, g: 0.7970782, b: 0.69074374, a: 1}
+  m_IndirectSpecularColor: {r: 0.19198054, g: 0.79708034, b: 0.69074035, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12512,6 +12512,8 @@ MonoBehaviour:
   slimeBox02: {fileID: 489664675}
   pinkSlime: {fileID: 6334437471281470227, guid: a03af7b9ac8322145a2560492e0ae4be, type: 3}
   tabbySlime: {fileID: 6334437471281470227, guid: 27225a6a7b4c3454885d725e07c40cd7, type: 3}
+  carrot: {fileID: 8039220092909583225, guid: 715e3d726e608a5469b6404a35bab1f2, type: 3}
+  pogo: {fileID: 4444770586483520562, guid: bdf6e1e295789e748b619581b3c682dd, type: 3}
 --- !u!4 &863989796
 Transform:
   m_ObjectHideFlags: 0
@@ -42916,6 +42918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cb68fe78f18ea4d8a2c8e46f9c77a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bag: 00000000000000000000000000000000
+  itemCount: 00000000000000000000000000000000
   player: {fileID: 8849947326484696918}
   selectInvenNum: 0
   SelectedUI:

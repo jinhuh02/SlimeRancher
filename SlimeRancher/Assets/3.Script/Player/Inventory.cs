@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 
-    int[] bag = new int[4];
-    int[] itemCount = new int[4];
+    public int[] bag = new int[4];
+    public int[] itemCount = new int[4];
 
     GameObject[,] objBox = new GameObject[4, 20];
 
@@ -95,6 +95,11 @@ public class Inventory : MonoBehaviour
                 if(itemObj.layer == 7)
                 {
                     itemObj.layer = 0;
+                    if (itemObj.GetComponent<Slime>().myBarrier != null)
+                    {
+                        itemObj.GetComponent<Slime>().myBarrier.inSlimeCount[itemObj.GetComponent<Item>().itemNum - 1]--;
+                        itemObj.GetComponent<Slime>().myBarrier = null;
+                    }
                 }
 
                 count_UI[i].text = "x " + itemCount[i];
@@ -127,6 +132,11 @@ public class Inventory : MonoBehaviour
             if (itemObj.layer == 7)
             {
                 itemObj.layer = 0;
+                if (itemObj.GetComponent<Slime>().myBarrier != null)
+                {
+                    itemObj.GetComponent<Slime>().myBarrier.inSlimeCount[itemObj.GetComponent<Item>().itemNum - 1]--;
+                    itemObj.GetComponent<Slime>().myBarrier = null;
+                }
             }
 
             count_UI[selectInvenNum].text = "x " + itemCount[selectInvenNum];
@@ -154,6 +164,11 @@ public class Inventory : MonoBehaviour
                 if (itemObj.layer == 7)
                 {
                     itemObj.layer = 0;
+                    if (itemObj.GetComponent<Slime>().myBarrier != null)
+                    {
+                        itemObj.GetComponent<Slime>().myBarrier.inSlimeCount[itemObj.GetComponent<Item>().itemNum - 1]--;
+                        itemObj.GetComponent<Slime>().myBarrier = null;
+                    }
                 }
 
                 count_UI[i].text = "x " + itemCount[i];

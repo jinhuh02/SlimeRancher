@@ -26,7 +26,12 @@ public class SaveFile
 
 
 public class JsonLoader : MonoBehaviour
-{
+{ 
+
+    #region instance
+    public static JsonLoader instance = null;
+
+    #endregion
 
     //새 게임일 경우 바로 시작
 
@@ -47,6 +52,18 @@ public class JsonLoader : MonoBehaviour
 
     private void Awake()
     {
+        if (instance)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+
+
         path = Path.Combine(Application.persistentDataPath + "/SaveFile.json");
         Debug.Log(path);
 
@@ -65,14 +82,12 @@ public class JsonLoader : MonoBehaviour
                 saveData.Add(savfiles.saveDatas[i]); //saveData 리스트에 1~3개의 데이터가 쌓임
             }
 
-            print("List = " + saveData);
         }
         else
         {
             Debug.Log("기록이 존재하지 않습니다");
         }
 
-        DontDestroyOnLoad(gameObject);
     }
 
 

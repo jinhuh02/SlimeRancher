@@ -19,6 +19,10 @@ public class Slime : MonoBehaviour
 
     private bool firstOnEnable = true;
 
+    public Barrier myBarrier = null;
+
+    public bool isSaveLoadSlime = false;
+
     [Header("오디오 클립")]
     [SerializeField] AudioClip[] bounce = new AudioClip[4]; //튀어오를때
     [SerializeField] AudioClip bite; //먹을때
@@ -27,6 +31,8 @@ public class Slime : MonoBehaviour
     [SerializeField] AudioClip[] thrown = new AudioClip[4]; //인벤토리에서 내밷어질떄
     [SerializeField] AudioClip[] splat = new AudioClip[3];
     AudioSource audioSource;
+
+
 
     private void Start()
     {
@@ -37,7 +43,11 @@ public class Slime : MonoBehaviour
 
         myJumpTime = Random.Range(5f, 6.5f);
 
-        slime_rigidbody.AddForce(Vector3.up * 700, ForceMode.Force);
+        if (!isSaveLoadSlime)
+        {
+            slime_rigidbody.AddForce(Vector3.up * 700, ForceMode.Force);
+        }
+        
         StartCoroutine(Slime_co());
     }
 
@@ -198,4 +208,12 @@ public class Slime : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        if(myBarrier != null)
+        {
+            myBarrier.inSlimeCount[gameObject.GetComponent<Item>().itemNum - 1]--;
+            myBarrier = null;
+        }
+    }
 }

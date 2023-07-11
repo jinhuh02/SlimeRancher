@@ -12,11 +12,6 @@ public class Barrier : MonoBehaviour
         inSlimeCount[1] = 0;
     }
 
-    public void Update()
-    {
-        Debug.Log(gameObject.name + inSlimeCount[0] + "|" + inSlimeCount[1]);
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Slime") && other.gameObject.layer == 0)
@@ -27,11 +22,15 @@ public class Barrier : MonoBehaviour
             {
                 case 1: //핑크슬라임
                     inSlimeCount[0]--;
+                    other.GetComponent<Slime>().myBarrier = null;
                     break;
                 case 2: //냥이슬라임
                     inSlimeCount[1]--;
+                    other.GetComponent<Slime>().myBarrier = null;
                     break;
             }
+
+            Debug.Log(gameObject.name + inSlimeCount[0] + "|" + inSlimeCount[1]);
         }
     }
 
@@ -45,11 +44,15 @@ public class Barrier : MonoBehaviour
             {
                 case 1: //핑크슬라임
                     inSlimeCount[0]++;
+                    other.GetComponent<Slime>().myBarrier = this;
                     break;
                 case 2: //냥이슬라임
                     inSlimeCount[1]++;
+                    other.GetComponent<Slime>().myBarrier = this;
                     break;
             }
+
+            Debug.Log(gameObject.name + inSlimeCount[0] + "|" + inSlimeCount[1]);
         }
     }
 
