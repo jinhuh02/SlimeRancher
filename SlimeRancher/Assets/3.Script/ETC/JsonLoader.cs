@@ -173,7 +173,6 @@ public class JsonLoader : MonoBehaviour
 
             //isSaveLoad = false;
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
 
         else if(SceneManager.GetActiveScene().name == "LoadingScene")
