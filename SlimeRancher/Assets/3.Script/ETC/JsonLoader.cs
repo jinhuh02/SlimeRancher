@@ -151,6 +151,17 @@ public class JsonLoader : MonoBehaviour
         {
             saveData.RemoveAt(selectFileNum);
             Debug.Log("기록삭제하고 남은거 : " + saveData);
+            File_Update();
+
+            savfiles = JsonUtility.FromJson<SaveFile>(File_Read());
+
+            saveData.Clear();
+            for (int i = 0; i < savfiles.saveDatas.Length; i++)
+            {
+                saveData.Add(savfiles.saveDatas[i]);
+            }
+
+
             //다시 로드
             FindObjectOfType<Lobby>().UpdateUIText();
         }
