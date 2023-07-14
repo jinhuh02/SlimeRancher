@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 997110912648629981}
   - component: {fileID: 997110912648629980}
   - component: {fileID: 997110912648629983}
-  - component: {fileID: 997110912648629982}
+  - component: {fileID: 5258523962209111538}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -215,6 +215,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 4602242728412279916}
+  isSaveLoadFood: 0
 --- !u!114 &997110912648629980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,8 +246,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &997110912648629982
-MeshCollider:
+--- !u!136 &5258523962209111538
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -255,10 +256,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057595, z: 0.0000076293945}
 --- !u!1 &997110912683428949
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +313,7 @@ GameObject:
   - component: {fileID: 997110913177492908}
   - component: {fileID: 997110913177492911}
   - component: {fileID: 997110913177492910}
-  - component: {fileID: 997110913177492905}
+  - component: {fileID: 6087814140530437475}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -416,6 +417,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 4602242728412279916}
+  isSaveLoadFood: 0
 --- !u!114 &997110913177492911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,8 +448,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &997110913177492905
-MeshCollider:
+--- !u!136 &6087814140530437475
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -456,10 +458,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0.00000047683716, y: 0.32057405, z: 0}
 --- !u!1 &997110914150376257
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +477,7 @@ GameObject:
   - component: {fileID: 997110914150378682}
   - component: {fileID: 997110914150376261}
   - component: {fileID: 997110914150376260}
-  - component: {fileID: 997110914150376263}
+  - component: {fileID: 4760090021371004711}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -579,6 +581,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 4602242728412279916}
+  isSaveLoadFood: 0
 --- !u!114 &997110914150376261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,8 +612,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &997110914150376263
-MeshCollider:
+--- !u!136 &4760090021371004711
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -619,10 +622,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057786, z: 0.0000076293945}
 --- !u!1 &997110914232779946
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +641,7 @@ GameObject:
   - component: {fileID: 997110914232779951}
   - component: {fileID: 997110914232779950}
   - component: {fileID: 997110914232779945}
-  - component: {fileID: 997110914232779944}
+  - component: {fileID: 9029642434273718754}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -742,6 +745,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 4602242728412279916}
+  isSaveLoadFood: 0
 --- !u!114 &997110914232779950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,8 +776,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &997110914232779944
-MeshCollider:
+--- !u!136 &9029642434273718754
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -782,10 +786,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057405, z: 0}
 --- !u!1 &4602242728412279914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,7 +1363,7 @@ GameObject:
   - component: {fileID: 2910894040573116599}
   - component: {fileID: 5236234791707138957}
   - component: {fileID: 6471651222157271020}
-  - component: {fileID: 6471651222157271021}
+  - component: {fileID: 1917446478496402781}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -1463,6 +1467,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 4602242728412279916}
+  isSaveLoadFood: 0
 --- !u!114 &5236234791707138957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,8 +1498,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &6471651222157271021
-MeshCollider:
+--- !u!136 &1917446478496402781
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1503,7 +1508,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057786, z: 0}

@@ -53,6 +53,7 @@ public class Corral : MonoBehaviour
     {
         corral_UI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         GameManager.instance.isUIActivation = true;
         AudioManager.instance.Play_UI_Activate();
     }
@@ -61,6 +62,7 @@ public class Corral : MonoBehaviour
     {
         corral_UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         GameManager.instance.isUIActivation = false;
         AudioManager.instance.Play_UI_Exit();
     }

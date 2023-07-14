@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 5943556876292713456}
   - component: {fileID: 5943556876292713457}
   - component: {fileID: 5943556876292713470}
-  - component: {fileID: 5943556876292713471}
+  - component: {fileID: 6277914308241767649}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -679,6 +679,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 5943556877067331596}
+  isSaveLoadFood: 0
 --- !u!114 &5943556876292713457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,8 +710,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &5943556876292713471
-MeshCollider:
+--- !u!136 &6277914308241767649
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -719,10 +720,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.11
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!1 &5943556876377142625
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +739,7 @@ GameObject:
   - component: {fileID: 5943556876377142628}
   - component: {fileID: 5943556876377142629}
   - component: {fileID: 5943556876377142626}
-  - component: {fileID: 5943556876377142627}
+  - component: {fileID: 3193785285388954651}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -842,6 +843,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 5943556877067331596}
+  isSaveLoadFood: 0
 --- !u!114 &5943556876377142629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,8 +874,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &5943556876377142627
-MeshCollider:
+--- !u!136 &3193785285388954651
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -882,10 +884,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.11
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!1 &5943556876751856965
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +903,7 @@ GameObject:
   - component: {fileID: 5943556876751856984}
   - component: {fileID: 5943556876751856985}
   - component: {fileID: 5943556876751856966}
-  - component: {fileID: 5943556876751856967}
+  - component: {fileID: 7164186275779265576}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -1005,6 +1007,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 5943556877067331596}
+  isSaveLoadFood: 0
 --- !u!114 &5943556876751856985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,8 +1038,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &5943556876751856967
-MeshCollider:
+--- !u!136 &7164186275779265576
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1045,10 +1048,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.11
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!1 &5943556877067331599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1185,7 @@ GameObject:
   - component: {fileID: 5943556877426331654}
   - component: {fileID: 5943556877426331655}
   - component: {fileID: 5943556877426331652}
-  - component: {fileID: 5943556877426331653}
+  - component: {fileID: 4277963223453915430}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -1286,6 +1289,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 5943556877067331596}
+  isSaveLoadFood: 0
 --- !u!114 &5943556877426331655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,8 +1320,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &5943556877426331653
-MeshCollider:
+--- !u!136 &4277963223453915430
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1326,10 +1330,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.11
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!1 &5943556877573306818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1349,7 @@ GameObject:
   - component: {fileID: 5943556877573306841}
   - component: {fileID: 5943556877573306822}
   - component: {fileID: 5943556877573306823}
-  - component: {fileID: 5943556877573306820}
+  - component: {fileID: 993679367073602494}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -1449,6 +1453,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 5943556877067331596}
+  isSaveLoadFood: 0
 --- !u!114 &5943556877573306822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,8 +1484,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &5943556877573306820
-MeshCollider:
+--- !u!136 &993679367073602494
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1489,10 +1494,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.11
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!1 &5943556877713641535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1513,7 @@ GameObject:
   - component: {fileID: 5943556877713641522}
   - component: {fileID: 5943556877713641523}
   - component: {fileID: 5943556877713641520}
-  - component: {fileID: 5943556877713641521}
+  - component: {fileID: 3601921496905299607}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -1612,6 +1617,7 @@ MonoBehaviour:
   isAlreadyChosen: 0
   isHarvested: 0
   myFoodSpawner: {fileID: 5943556877067331596}
+  isSaveLoadFood: 0
 --- !u!114 &5943556877713641523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,8 +1648,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &5943556877713641521
-MeshCollider:
+--- !u!136 &3601921496905299607
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1652,7 +1658,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.11
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}

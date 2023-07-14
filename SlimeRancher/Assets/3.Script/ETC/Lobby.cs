@@ -183,5 +183,10 @@ public class Lobby : MonoBehaviour
         Application.Quit();
     }
 
+    public void RemoveSaveFile_Btn()
+    {
+        FindObjectOfType<JsonLoader>().RemoveSaveFile();
+    }
+
 
 }

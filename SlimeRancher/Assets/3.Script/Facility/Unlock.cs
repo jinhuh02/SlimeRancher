@@ -35,6 +35,7 @@ public class Unlock : MonoBehaviour
         unlock_UI.SetActive(true);
         Cursor.lockState = CursorLockMode.Confined;
         GameManager.instance.isUIActivation = true;
+        Cursor.visible = true;
         AudioManager.instance.Play_UI_Activate();
     }
     public void ExitUnlockUI()
@@ -42,6 +43,7 @@ public class Unlock : MonoBehaviour
         unlock_UI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameManager.instance.isUIActivation = false;
+        Cursor.visible = false;
         AudioManager.instance.Play_UI_Exit();
     }
 

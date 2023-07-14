@@ -3537,9 +3537,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1932979959}
-        m_TargetAssemblyTypeName: JsonLoader, Assembly-CSharp
-        m_MethodName: RemoveSaveFile
+      - m_Target: {fileID: 1354504855}
+        m_TargetAssemblyTypeName: Lobby, Assembly-CSharp
+        m_MethodName: RemoveSaveFile_Btn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5225,7 +5225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956990179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.22, y: 17.6, z: -89.64}
+  m_LocalPosition: {x: -15.22, y: 25.5, z: -89.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 847387595}
@@ -9796,7 +9796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713502901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.5, y: 19.5, z: 0}
+  m_LocalPosition: {x: 46.6, y: 28.4, z: -13.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 847387595}
@@ -12405,7 +12405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c216dd378fabe40ae135f21be01dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slime_object: {fileID: 6334437471281470227, guid: a03af7b9ac8322145a2560492e0ae4be, type: 3}
+  slime_object: {fileID: 6334437471281470227, guid: 27225a6a7b4c3454885d725e07c40cd7, type: 3}
   spawnEffectclip:
   - {fileID: 8300000, guid: d88607e5b9ad2fe46aebf482db53ac22, type: 3}
   - {fileID: 8300000, guid: b6a5ccfd3954a97439372996ecac2d10, type: 3}
@@ -12420,7 +12420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009594965957827807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.2, y: 24.6, z: -55.6}
+  m_LocalPosition: {x: 65.9, y: 38.8, z: -32.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 847387595}

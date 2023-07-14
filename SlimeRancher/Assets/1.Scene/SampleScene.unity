@@ -40763,20 +40763,6 @@ MonoBehaviour:
   isHarvested: 0
   myFoodSpawner: {fileID: 4602242729226537432}
   isSaveLoadFood: 0
---- !u!64 &997110912882964764
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997110912882964766}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
 --- !u!54 &997110912882964765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40808,7 +40794,7 @@ GameObject:
   - component: {fileID: 997110912882964763}
   - component: {fileID: 997110912882964762}
   - component: {fileID: 997110912882964765}
-  - component: {fileID: 997110912882964764}
+  - component: {fileID: 997110912882964768}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -40830,6 +40816,20 @@ Transform:
   m_Father: {fileID: 997110913496920574}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &997110912882964768
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997110912882964766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.032969
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057405, z: -0.0000019073486}
 --- !u!33 &997110912966982288
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -40875,8 +40875,8 @@ Transform:
   m_Father: {fileID: 997110913446457976}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &997110912966982298
-MeshCollider:
+--- !u!136 &997110912966982298
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -40885,10 +40885,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057405, z: 0}
 --- !u!54 &997110912966982299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41114,8 +41114,8 @@ Transform:
   m_Father: {fileID: 997110913446457976}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &997110913118264693
-MeshCollider:
+--- !u!136 &997110913118264693
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -41124,10 +41124,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057405, z: -0.000030517578}
 --- !u!54 &997110913118264694
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41285,20 +41285,6 @@ Transform:
   m_Father: {fileID: 997110913496920574}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &997110913336499955
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997110913336499957}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
 --- !u!1 &997110913336499957
 GameObject:
   m_ObjectHideFlags: 0
@@ -41314,7 +41300,7 @@ GameObject:
   - component: {fileID: 997110913336496398}
   - component: {fileID: 997110913336499953}
   - component: {fileID: 997110913336499952}
-  - component: {fileID: 997110913336499955}
+  - component: {fileID: 997110913336499958}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -41322,6 +41308,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &997110913336499958
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997110913336499957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.032969
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: -0.000030517578, y: 0.32057405, z: 0}
 --- !u!1 &997110913446457959
 GameObject:
   m_ObjectHideFlags: 0
@@ -41457,20 +41457,6 @@ MonoBehaviour:
   isHarvested: 0
   myFoodSpawner: {fileID: 4602242729226537432}
   isSaveLoadFood: 0
---- !u!64 &997110913462514538
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997110913462514540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
 --- !u!54 &997110913462514539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41502,7 +41488,7 @@ GameObject:
   - component: {fileID: 997110913462514537}
   - component: {fileID: 997110913462514536}
   - component: {fileID: 997110913462514539}
-  - component: {fileID: 997110913462514538}
+  - component: {fileID: 997110913462514542}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -41524,6 +41510,20 @@ Transform:
   m_Father: {fileID: 997110913496920574}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &997110913462514542
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997110913462514540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.032969
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: -0.000030517578, y: 0.32057405, z: -0.0000019073486}
 --- !u!1 &997110913496920545
 GameObject:
   m_ObjectHideFlags: 0
@@ -41666,8 +41666,8 @@ Transform:
   m_Father: {fileID: 997110913446457976}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &997110913546531052
-MeshCollider:
+--- !u!136 &997110913546531052
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -41676,10 +41676,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0.000015258789, y: 0.32057405, z: -0.000030517578}
 --- !u!54 &997110913546531053
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41853,20 +41853,6 @@ Transform:
   m_Father: {fileID: 997110913496920574}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &997110913973837853
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997110913973837855}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
 --- !u!1 &997110913973837855
 GameObject:
   m_ObjectHideFlags: 0
@@ -41882,7 +41868,7 @@ GameObject:
   - component: {fileID: 997110913973837848}
   - component: {fileID: 997110913973837851}
   - component: {fileID: 997110913973837850}
-  - component: {fileID: 997110913973837853}
+  - component: {fileID: 997110913973837856}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -41890,6 +41876,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &997110913973837856
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997110913973837855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.032969
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: -0.000030517578, y: 0.32057405, z: -0.0000019073486}
 --- !u!23 &997110914024039312
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41976,8 +41976,8 @@ Transform:
   m_Father: {fileID: 997110913446457976}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &997110914024039323
-MeshCollider:
+--- !u!136 &997110914024039323
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -41986,10 +41986,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057405, z: 0}
 --- !u!54 &997110914024039324
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43277,20 +43277,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &1593406887147056574
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593406887147056575}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
 --- !u!1 &1593406887147056575
 GameObject:
   m_ObjectHideFlags: 0
@@ -43306,7 +43292,7 @@ GameObject:
   - component: {fileID: 2772270726783423838}
   - component: {fileID: 8661317448400423094}
   - component: {fileID: 1593406887147056573}
-  - component: {fileID: 1593406887147056574}
+  - component: {fileID: 1593406887147056576}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -43314,6 +43300,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &1593406887147056576
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593406887147056575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!1 &1593406888294079264
 GameObject:
   m_ObjectHideFlags: 0
@@ -43337,8 +43337,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1593406888294079265
-MeshCollider:
+--- !u!136 &1593406888294079265
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -43347,10 +43347,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &1593406888294079266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54295,8 +54295,8 @@ Transform:
   m_Father: {fileID: 5943556877569090666}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556875889047384
-MeshCollider:
+--- !u!136 &5943556875889047384
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54305,10 +54305,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.00000023841858, y: 0.06599581, z: 0.02294898}
 --- !u!54 &5943556875889047385
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54459,8 +54459,8 @@ Transform:
   m_Father: {fileID: 5943556877569090666}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556876025716397
-MeshCollider:
+--- !u!136 &5943556876025716397
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54469,10 +54469,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: -0.00000071525574, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556876025716398
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54623,8 +54623,8 @@ Transform:
   m_Father: {fileID: 5943556876670361290}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556876117457038
-MeshCollider:
+--- !u!136 &5943556876117457038
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54633,10 +54633,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.06
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556876117457039
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54787,8 +54787,8 @@ Transform:
   m_Father: {fileID: 5943556876670361290}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556876457326134
-MeshCollider:
+--- !u!136 &5943556876457326134
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54797,10 +54797,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.06
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556876457326135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54951,8 +54951,8 @@ Transform:
   m_Father: {fileID: 5943556876670361290}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556876474673322
-MeshCollider:
+--- !u!136 &5943556876474673322
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -54961,10 +54961,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.06
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556876474673323
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55271,8 +55271,8 @@ Transform:
   m_Father: {fileID: 5943556877569090666}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556876709033836
-MeshCollider:
+--- !u!136 &5943556876709033836
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55281,10 +55281,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: -0.00000166893, y: 0.06599581, z: 0.022918463}
 --- !u!54 &5943556876709033837
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55435,8 +55435,8 @@ Transform:
   m_Father: {fileID: 5943556876670361290}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556877272206840
-MeshCollider:
+--- !u!136 &5943556877272206840
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55445,10 +55445,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.06
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556877272206841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55599,8 +55599,8 @@ Transform:
   m_Father: {fileID: 5943556877569090666}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556877385073198
-MeshCollider:
+--- !u!136 &5943556877385073198
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55609,10 +55609,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556877385073199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55763,8 +55763,8 @@ Transform:
   m_Father: {fileID: 5943556876670361290}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556877408691213
-MeshCollider:
+--- !u!136 &5943556877408691213
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55773,10 +55773,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.06
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556877408691214
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55965,8 +55965,8 @@ Transform:
   m_Father: {fileID: 5943556876670361290}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556877588876748
-MeshCollider:
+--- !u!136 &5943556877588876748
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55975,10 +55975,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.06
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &5943556877588876749
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56129,8 +56129,8 @@ Transform:
   m_Father: {fileID: 5943556877569090666}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556877757174282
-MeshCollider:
+--- !u!136 &5943556877757174282
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -56139,10 +56139,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.02294898}
 --- !u!54 &5943556877757174283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56293,8 +56293,8 @@ Transform:
   m_Father: {fileID: 5943556877569090666}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5943556877840288918
-MeshCollider:
+--- !u!136 &5943556877840288918
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -56303,10 +56303,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: -0.00000023841858, y: 0.06599581, z: 0.022918463}
 --- !u!54 &5943556877840288919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57724,7 +57724,7 @@ GameObject:
   - component: {fileID: 2910894041571065477}
   - component: {fileID: 5236234791127590335}
   - component: {fileID: 6471651223306330590}
-  - component: {fileID: 6471651223306330591}
+  - component: {fileID: 6471651223306330589}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -57732,6 +57732,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &6471651223306330589
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471651223306330588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.0329688
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057405, z: 0}
 --- !u!54 &6471651223306330590
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57748,20 +57762,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &6471651223306330591
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471651223306330588}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
 --- !u!114 &6471651223491011159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57796,20 +57796,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &6471651223491011161
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471651223491011162}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 803681742737576751, guid: 62773e728ee764145831ab2f511a46ca, type: 3}
 --- !u!1 &6471651223491011162
 GameObject:
   m_ObjectHideFlags: 0
@@ -57825,7 +57811,7 @@ GameObject:
   - component: {fileID: 2910894041386646787}
   - component: {fileID: 5236234790909355577}
   - component: {fileID: 6471651223491011160}
-  - component: {fileID: 6471651223491011161}
+  - component: {fileID: 6471651223491011163}
   m_Layer: 0
   m_Name: Food_Pogofruit
   m_TagString: Food
@@ -57833,6 +57819,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &6471651223491011163
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471651223491011162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.032969
+  m_Height: 2.6915252
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32057023, z: -0.0000038146973}
 --- !u!4 &6476421259561533927
 Transform:
   m_ObjectHideFlags: 0
@@ -59411,8 +59411,8 @@ Transform:
   m_Father: {fileID: 7102640032665497673}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &7102640030865763150
-MeshCollider:
+--- !u!136 &7102640030865763150
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -59421,10 +59421,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &7102640030865763151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59575,8 +59575,8 @@ Transform:
   m_Father: {fileID: 7102640032665497673}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &7102640030999826006
-MeshCollider:
+--- !u!136 &7102640030999826006
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -59585,10 +59585,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &7102640030999826007
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59642,20 +59642,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &7102640031658723744
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102640031658723746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
 --- !u!4 &7102640031658723745
 Transform:
   m_ObjectHideFlags: 0
@@ -59685,7 +59671,7 @@ GameObject:
   - component: {fileID: 7102640031658723757}
   - component: {fileID: 7102640031658723758}
   - component: {fileID: 7102640031658723759}
-  - component: {fileID: 7102640031658723744}
+  - component: {fileID: 7102640031658723747}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -59693,6 +59679,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &7102640031658723747
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102640031658723746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!33 &7102640031658723754
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59956,8 +59956,8 @@ Transform:
   m_Father: {fileID: 7102640032665497673}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &7102640031711785527
-MeshCollider:
+--- !u!136 &7102640031711785527
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -59966,10 +59966,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!54 &7102640031874637264
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59986,20 +59986,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &7102640031874637265
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102640031874637267}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
 --- !u!4 &7102640031874637266
 Transform:
   m_ObjectHideFlags: 0
@@ -60029,7 +60015,7 @@ GameObject:
   - component: {fileID: 7102640031874637278}
   - component: {fileID: 7102640031874637279}
   - component: {fileID: 7102640031874637264}
-  - component: {fileID: 7102640031874637265}
+  - component: {fileID: 7102640031874637268}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -60037,6 +60023,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &7102640031874637268
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102640031874637267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!33 &7102640031874637275
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -60150,20 +60150,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!64 &7102640032008419529
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102640032008419531}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
 --- !u!4 &7102640032008419530
 Transform:
   m_ObjectHideFlags: 0
@@ -60193,7 +60179,7 @@ GameObject:
   - component: {fileID: 7102640032008419542}
   - component: {fileID: 7102640032008419543}
   - component: {fileID: 7102640032008419528}
-  - component: {fileID: 7102640032008419529}
+  - component: {fileID: 7102640032008419532}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -60201,6 +60187,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &7102640032008419532
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102640032008419531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!33 &7102640032008419539
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -60448,8 +60448,8 @@ Transform:
   m_Father: {fileID: 7102640032665497673}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &7102640032659193663
-MeshCollider:
+--- !u!136 &7102640032659193663
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -60458,10 +60458,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!1 &7102640032665497672
 GameObject:
   m_ObjectHideFlags: 0
@@ -60499,20 +60499,6 @@ Transform:
   m_Father: {fileID: 8992185}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &7102640032854574248
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102640032854574250}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3139015394369009175, guid: 1baba4f45758d1b46a6024da8b6eecbb, type: 3}
 --- !u!4 &7102640032854574249
 Transform:
   m_ObjectHideFlags: 0
@@ -60542,7 +60528,7 @@ GameObject:
   - component: {fileID: 7102640032854574261}
   - component: {fileID: 7102640032854574262}
   - component: {fileID: 7102640032854574263}
-  - component: {fileID: 7102640032854574248}
+  - component: {fileID: 7102640032854574251}
   m_Layer: 0
   m_Name: Food_Carrot
   m_TagString: Food
@@ -60550,6 +60536,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &7102640032854574251
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102640032854574250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1
+  m_Height: 7.8630238
+  m_Direction: 1
+  m_Center: {x: 0.0000011920929, y: 0.06599581, z: 0.022933722}
 --- !u!33 &7102640032854574258
 MeshFilter:
   m_ObjectHideFlags: 0
