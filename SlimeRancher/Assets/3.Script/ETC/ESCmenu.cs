@@ -192,6 +192,7 @@ public class ESCmenu : MonoBehaviour
     public void ShowESC_UI()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         GameManager.instance.isUIActivation = true;
         AudioManager.instance.Play_UI_Button(0);
         ESC_menu.SetActive(true);
@@ -202,6 +203,7 @@ public class ESCmenu : MonoBehaviour
     public void Continue_Btn()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         GameManager.instance.isUIActivation = false;
         Time.timeScale = 1;
     }

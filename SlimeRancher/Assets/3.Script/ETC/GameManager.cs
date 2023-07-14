@@ -51,8 +51,21 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1;
 
+        StartCoroutine(LateCursorHide_co());
     }
 
+    IEnumerator LateCursorHide_co()
+    {
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return null;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Debug.Log("Ä¿¼­ ¼û±è");
+    }
 
     public void ComputeCoinValue(int num)
     {
