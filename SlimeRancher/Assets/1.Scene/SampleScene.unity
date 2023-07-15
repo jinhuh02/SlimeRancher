@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: f4c7d2112674bd149bafd82ed54251c4, type: 3}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.19198054, g: 0.79708034, b: 0.69074035, a: 1}
+  m_IndirectSpecularColor: {r: 0.19076458, g: 0.7970782, b: 0.69074374, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -557,7 +557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &27842396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1752546534}
   m_HandleRect: {fileID: 1243928198}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -23476,7 +23476,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 80
+  m_Text: 100
 --- !u!222 &1384255715
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26424,7 +26424,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 57045267}
   m_HandleRect: {fileID: 2086819349}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -28209,7 +28209,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 80
+  m_Text: 100
 --- !u!222 &1631089855
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28414,7 +28414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 80
+  m_Text: 100
 --- !u!222 &1633972436
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29543,7 +29543,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 494235333}
   m_HandleRect: {fileID: 445657461}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -34740,7 +34740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1941128564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47782,7 +47782,7 @@ AudioSource:
   m_GameObject: {fileID: 3225451747185826705}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 9110493636966290252, guid: 953c9c07f8273b44886814a869abf0f3, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

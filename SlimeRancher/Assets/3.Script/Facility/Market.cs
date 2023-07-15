@@ -24,13 +24,17 @@ public class Market : MonoBehaviour
         {
             //Debug.Log("1개 접수! 코인증가!");
 
-            if(collision.transform.GetComponent<Item>().itemName.Equals("분홍색 플로트"))
+            if(collision.transform.GetComponent<Item>().itemName.Equals("분홍색 플로트") && !collision.transform.GetComponent<Plort>().isSell)
             {
+                collision.transform.GetComponent<Plort>().isSell = true;
                 GameManager.instance.ComputeCoinValue(12);
+                Debug.Log("접수");
             }
-            else if (collision.transform.GetComponent<Item>().itemName.Equals("냥이 플로트"))
+            else if (collision.transform.GetComponent<Item>().itemName.Equals("냥이 플로트") && !collision.transform.GetComponent<Plort>().isSell)
             {
+                collision.transform.GetComponent<Plort>().isSell = true;
                 GameManager.instance.ComputeCoinValue(37);
+                Debug.Log("접수");
             }
 
             Destroy(collision.gameObject);

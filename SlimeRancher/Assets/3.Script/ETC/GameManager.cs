@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     public void ComputeCoinValue(int num)
     {
+        Debug.Log(myCoin + " + " + num);
         myCoin += num;
         coin_text.text = "" + myCoin;
     }

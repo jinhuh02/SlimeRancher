@@ -65,10 +65,10 @@ public class TimeManager : MonoBehaviour
         }
 
         //밤 시간일 경우 어둡게
-        if (currentTimeHour >= 18 || currentTimeHour < 4)
-        {
-            GameManager.instance._colorAdjustments.postExposure.value = -3.5f;
-        }
+        //if (currentTimeHour >= 18 || currentTimeHour < 4)
+        //{
+        //    GameManager.instance._colorAdjustments.postExposure.value = -3.5f;
+        //}
 
 
         StartCoroutine(TimeCheck_co());
@@ -93,12 +93,12 @@ public class TimeManager : MonoBehaviour
                 {
                     case 4:
                         //서서히 아침이 된다
-                        StartCoroutine(Morning_co());
+                        //StartCoroutine(Morning_co());
                         isnight = false;
                         break;
                     case 18:
                         //밤이 된다
-                        StartCoroutine(Night_co());
+                        //StartCoroutine(Night_co());
                         isnight = true;
                         break;
                     case 24:

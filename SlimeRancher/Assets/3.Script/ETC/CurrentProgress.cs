@@ -57,6 +57,7 @@ public class CurrentProgress : MonoBehaviour
         TimeManager.instance.currentTimeHour = hour;
         TimeManager.instance.currentTimeMinute = minute;
         GameManager.instance.myCoin = coin;
+        Debug.Log("세이브 불러오기 코인 : " + coin);
 
         for(int i=0; i<4; i++)
         {

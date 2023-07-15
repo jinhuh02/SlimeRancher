@@ -422,17 +422,41 @@ public class ESCmenu : MonoBehaviour
 
     public void SetAudioMasterVolum(Slider slider)
     {
-        masterVolum = slider.value;
+        if(slider.value == -40)
+        {
+            masterVolum = -80;
+        }
+        else
+        {
+            masterVolum = slider.value;
+        }
+        
         SetAudioVolum(0);
     }
     public void SetAudioBackgroundVolum(Slider slider)
     {
-        backgroundVolum = slider.value;
+        if(slider.value == -40)
+        {
+            backgroundVolum = -80;
+        }
+        else
+        {
+            backgroundVolum = slider.value;
+        }
+        
         SetAudioVolum(1);
     }
     public void SetAudioEffextVolum(Slider slider)
     {
-        effectVolum = slider.value;
+        if (slider.value == -40)
+        {
+            effectVolum = -80;
+        }
+        else
+        {
+            effectVolum = slider.value;
+        }
+        
         SetAudioVolum(2);
     }
 
@@ -442,18 +466,47 @@ public class ESCmenu : MonoBehaviour
         {
             case 0:
                 mixer.SetFloat("master", masterVolum);
-                PlayerPrefs.SetFloat("masterVolum", masterVolum);
-                masterAudioText.text = "" + (int)((masterVolum+80) /80 * 100);
+                if(masterVolum <= -40)
+                {
+                    PlayerPrefs.SetFloat("masterVolum", -80);
+                    masterAudioText.text = "" + 0;
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat("masterVolum", masterVolum);
+                    masterAudioText.text = "" + (int)((masterVolum + 40) / 40 * 100);
+                }
+                
                 break;
             case 1:
                 mixer.SetFloat("background", backgroundVolum);
-                PlayerPrefs.SetFloat("backgroundVolum", backgroundVolum);
-                backgroundAudioText.text = "" + (int)(((backgroundVolum + 80) / 80 * 100));
+                if (backgroundVolum <= -40)
+                {
+                    Debug.Log(backgroundVolum);
+                    PlayerPrefs.SetFloat("backgroundVolum", -80);
+                    backgroundAudioText.text = "" + 0;
+                }
+                else
+                {
+                    Debug.Log(backgroundVolum);
+                    PlayerPrefs.SetFloat("backgroundVolum", backgroundVolum);
+                    backgroundAudioText.text = "" + (int)(((backgroundVolum + 40) / 40 * 100));
+                }
+                
                 break;
             case 2:
                 mixer.SetFloat("effect", effectVolum);
-                PlayerPrefs.SetFloat("effectVolum", effectVolum);
-                effextrAudioText.text = "" + (int)(((effectVolum + 80) / 80 * 100));
+                if (effectVolum <= -40)
+                {
+                    PlayerPrefs.SetFloat("effectVolum", -80);
+                    effextrAudioText.text = "" + 0;
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat("effectVolum", effectVolum);
+                    effextrAudioText.text = "" + (int)(((effectVolum + 40) / 40 * 100));
+                }
+                
                 break;
         }
     }

@@ -41,14 +41,18 @@ public class AudioManager : MonoBehaviour
             switch (TimeManager.instance.isnight)
             {
                 case true:
+                    Debug.Log("广 犁积");
                     background_Audio.clip = backgroundClip[0]; //musicRanchTheme
                     background_Audio.Play();
-                    yield return new WaitForSeconds(backgroundClip[0].length);
+                    yield return new WaitForSeconds(197);
+                    Debug.Log("广 犁积 场");
                     break;
                 case false:
+                    Debug.Log("撤 犁积");
                     background_Audio.clip = backgroundClip[1]; //musicRanchThemeNight
                     background_Audio.Play();
-                    yield return new WaitForSeconds(backgroundClip[1].length);
+                    yield return new WaitForSeconds(229);
+                    Debug.Log("撤 犁积 场");
                     break;
             }
 
