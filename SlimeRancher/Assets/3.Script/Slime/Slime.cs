@@ -48,15 +48,15 @@ public class Slime : MonoBehaviour
             slime_rigidbody.AddForce(Vector3.up * 700, ForceMode.Force);
         }
         
-        StartCoroutine(Slime_co());
+        StartCoroutine(SlimeJump_co());
     }
 
     public void StartSliemCoroutine()
     {
-        StartCoroutine(Slime_co());
+        StartCoroutine(SlimeJump_co());
     }
 
-    IEnumerator Slime_co()
+    IEnumerator SlimeJump_co()
     {
         while (true)
         {
@@ -188,7 +188,7 @@ public class Slime : MonoBehaviour
         audioSource.clip = this.plort;
         audioSource.Play();
 
-        StartCoroutine(Slime_co());
+        StartCoroutine(SlimeJump_co());
     }
 
 
